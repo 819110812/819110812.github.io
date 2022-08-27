@@ -4,11 +4,11 @@ home: true
 layout: Blog
 icon: home
 bgImage: http://tc.seoipo.com/home-bg-1.jpg
-title: 互联网小白
+title: 菜鸡阿秋 
 #heroImage: /logo.svg
-heroText: 互联网小白
+heroText: 菜鸡阿秋
 heroFullScreen: false
-tagline: 盛年不重来，一日难再晨
+tagline: 今天不学习，明天变垃圾
 #projects:
 #  - icon: project
 #    name: 项目名称
