@@ -19,6 +19,15 @@ export default sidebar([
     children: "structure",
   },
   {
+    text: "🚀 Leetcode",
+    icon: "",
+    prefix: "/leetcode/",
+    link: "",
+    collapsable: true,
+    children: "structure",
+  },
+
+  {
     text: "🧰 软件架构",
     icon: "",
     prefix: "/arch/",
