@@ -1,6 +1,8 @@
 ---
 article: true
-title: 和为s的两个数 
+title: 和为s的两个数
+tag: leetcode
+category: 数组
 order: 18
 ---
 

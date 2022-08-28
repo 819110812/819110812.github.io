@@ -1,6 +1,7 @@
 ---
 #博客首页设置：https://vuepress-theme-hope.github.io/v2/zh/guide/blog/home.html
 home: false 
+article: false
 layout: Blog
 icon: home
 bgImage: http://tc.seoipo.com/home-bg-1.jpg

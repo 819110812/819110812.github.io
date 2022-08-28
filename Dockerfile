@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm config set registry https://registry.npmmirror.com/ && \
-    npm i pnpm -g && \
-    pnpm add vuepress@next vuepress-theme-hope@next @vuepress/plugin-search@next && pnpm i && pnpm up
+RUN npm i pnpm -g && \
+    pnpm add vuepress@2.0.0-beta.49 vuepress-theme-hope@2.0.0-beta.91 @vuepress/plugin-google-analytics@2.0.0-beta.49 @vuepress/plugin-search@2.0.0-beta.49 @vuepress/plugin-docsearch@2.0.0-beta.49 && \
+    pnpm docs:build
 
 EXPOSE 8080
 

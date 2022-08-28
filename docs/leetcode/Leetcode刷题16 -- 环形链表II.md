@@ -1,6 +1,8 @@
 ---
 article: true
 title: 环形链表2
+tag: leetcode
+category: 链表
 order: 16
 ---
 

@@ -1,6 +1,7 @@
 ---
 article: true
 title: github+宝塔面板自动部署页面
+tag: devops
 order: 2
 ---
 

@@ -5,7 +5,7 @@ specifiers:
   '@vuepress/plugin-docsearch': 2.0.0-beta.49
   '@vuepress/plugin-google-analytics': 2.0.0-beta.49
   '@vuepress/plugin-search': 2.0.0-beta.49
-  pnpm: ^7.9.4
+  pnpm: ^7.9.5
   vue: ^3.2.37
   vuepress: 2.0.0-beta.49
   vuepress-theme-hope: 2.0.0-beta.91
@@ -15,7 +15,7 @@ dependencies:
   '@vuepress/plugin-docsearch': 2.0.0-beta.49_tbpndr44ulefs3hehwpi2mkf2y
   '@vuepress/plugin-google-analytics': 2.0.0-beta.49
   '@vuepress/plugin-search': 2.0.0-beta.49
-  pnpm: 7.9.4
+  pnpm: 7.9.5
   vue: 3.2.37
   vuepress: 2.0.0-beta.49_2swkti5cn42xfigpmsn6ifcgpu
   vuepress-theme-hope: 2.0.0-beta.91
@@ -4127,8 +4127,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: false
 
-  /pnpm/7.9.4:
-    resolution: {integrity: sha512-eZG33kdDFmIzBZoSRguEHVLtnHdJTvfP6wm53SyBt4Mqzbro9eIaQcEcB4qfJCGMaLvPegG2MQxD2EiArALaJA==}
+  /pnpm/7.9.5:
+    resolution: {integrity: sha512-+r7+PlBIsblqia8eUOUsBp/R+lHmGAm55jyQRt3DWMUI0srVR1aNJhQECfx24L53Ckz9g48mVxQXEniQMWQPmw==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: false

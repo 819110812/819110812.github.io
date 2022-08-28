@@ -1,6 +1,8 @@
 ---
 article: true
 title: 礼物最大的价值
+tag: leetcode
+category: 动态规划
 order: 5
 ---
 # Leetcode刷题05---礼物的最大价值

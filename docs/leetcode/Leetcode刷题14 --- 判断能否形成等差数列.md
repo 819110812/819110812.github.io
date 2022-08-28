@@ -1,6 +1,8 @@
 ---
 article: true
 title: 判断能否行程等差数列
+tag: leetcode
+category: 数组
 order: 11
 ---
 

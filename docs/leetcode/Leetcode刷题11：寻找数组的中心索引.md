@@ -1,6 +1,8 @@
 ---
 article: true
 title: 寻找数组的中心索引
+tag: leetcode
+category: 数组
 order: 11
 ---
 

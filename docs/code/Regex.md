@@ -1,6 +1,7 @@
 ---
 article: false
 title: 正则表达式
+tag: code
 icon: regexp
 order: 6
 ---

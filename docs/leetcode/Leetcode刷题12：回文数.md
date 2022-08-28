@@ -1,6 +1,8 @@
 ---
 article: true
 title: 回文数
+tag: leetcode
+category: 字符串
 order: 12
 ---
 

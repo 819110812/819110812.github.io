@@ -1,6 +1,8 @@
 ---
 article: true
 title: 二分查找
+tag: leetcode
+category: 搜索
 order: 6
 ---
 # Leetcode刷题06--二分查找

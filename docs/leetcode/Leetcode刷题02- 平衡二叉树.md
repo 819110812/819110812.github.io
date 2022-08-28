@@ -1,6 +1,8 @@
 ---
 article: true
 title: 平衡二叉树
+tag: leetcode
+category: 二叉树
 order: 2
 ---
 # Leetcode 平衡二叉树

@@ -1,6 +1,7 @@
 ---
 article: true
 title: 配置github sshkey
+tag: devops
 order: 1
 ---
 

@@ -1,6 +1,7 @@
 ---
 article: false
 title: TODO List
+tag: plans
 order: 1
 ---
 # TODO LIST

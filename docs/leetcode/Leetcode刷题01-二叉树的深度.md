@@ -1,6 +1,8 @@
 ---
 article: true 
 title: 二叉树的深度
+tag: leetcode
+category: 二叉树
 order: 1
 ---
 # Leetcode刷题记录01-二叉树的深度

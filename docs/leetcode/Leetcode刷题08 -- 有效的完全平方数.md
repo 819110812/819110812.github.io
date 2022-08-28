@@ -1,6 +1,7 @@
 ---
 article: true
 title: 有效的完全平方数
+tag: leetcode
 order: 8
 ---
 

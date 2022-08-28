@@ -1,6 +1,8 @@
 ---
 article: true
 title: 地图分析
+tag: leetcode
+category: BFS, DFS
 order: 19
 ---
 

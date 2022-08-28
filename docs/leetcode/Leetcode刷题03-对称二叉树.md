@@ -1,6 +1,8 @@
 ---
 article: true
 title: 对称二叉树
+tag: leetcode
+category: 二叉树
 order: 3
 ---
 # Leetcode刷题03-对称二叉树

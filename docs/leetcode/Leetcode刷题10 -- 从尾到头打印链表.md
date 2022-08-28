@@ -1,6 +1,8 @@
 ---
 article: true
 title: 从头到尾打印链表
+tag: leetcode
+category: 链表
 order: 10
 ---
 

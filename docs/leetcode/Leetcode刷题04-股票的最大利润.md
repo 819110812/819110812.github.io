@@ -1,6 +1,8 @@
 ---
 article: true
 title: 股票的最大利润
+tag: leetcode
+category: 动态规划
 order: 4
 ---
 # Leetcode刷题04-股票的最大利润
