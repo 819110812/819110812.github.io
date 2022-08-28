@@ -6,7 +6,7 @@ layout: Blog
 icon: home
 bgImage: http://tc.seoipo.com/home-bg-1.jpg
 title: 菜鸡阿秋 
-#heroImage: /logo.svg
+heroImage: ![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220828195501.png)
 heroText: 菜鸡阿秋
 heroFullScreen: false
 tagline: 今天不学习，明天变垃圾
