@@ -97,15 +97,15 @@ export default hopeTheme({
     //评论配置
     comment: {
       //部署 Waline：https://waline.js.org/guide/get-started.html
-      // provider: "Waline",
-      // serverURL: "https://waline.newzone.top",
-      // pageview: true,
-      //Giscus 备用配置
-      //provider: "Giscus",
-      //repo: "rockbenben/LearnData",
-      //repoId: "R_kgDOHdfk6Q",
-      //category: "Comments",
-      //categoryId: "DIC_kwDOHdfk6c4CQYNn",
+      provider: "Waline",
+      serverURL: "https://yfjrplux.api.lncldglobal.com",
+      pageview: true,
+      // Giscus 备用配置
+      // provider: "Giscus",
+      // repo: "rockbenben/LearnData",
+      // repoId: "R_kgDOHdfk6Q",
+      // category: "Comments",
+      // categoryId: "DIC_kwDOHdfk6c4CQYNn",
     },
 
     mdEnhance: {
