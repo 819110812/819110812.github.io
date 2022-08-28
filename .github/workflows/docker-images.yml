@@ -19,5 +19,5 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }} # 用于标记容器版本号
         run: |
-          docker build -t registry.cn-shanghai.aliyuncs.com/blog/vuepress:latest .
-          docker push registry.cn-shanghai.aliyuncs.com/blog/vuepress:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/aqiu/blog/vuepress:latest .
+          docker push registry.cn-shanghai.aliyuncs.com/aqiu/blog/vuepress:latest
