@@ -16,6 +16,14 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo b
 ## 安装webhook插件
 
 ## 配置回调脚本
+在首页选择到刚刚安装的webhook
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220828104943.png)
+
+点击添加hook
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220828105058.png)
+在下面添加执行脚本
+
 ```shell
 cd folder #进入你的网页文件夹
 git pull
