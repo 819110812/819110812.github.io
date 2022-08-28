@@ -44,6 +44,14 @@ export default sidebar([
     children: "structure",
   },
   {
+    text: "计划",
+    icon: "blog",
+    prefix: "/plans/",
+    link: "",
+    collapsable: true,
+    children: "structure",
+  },
+  {
     text: "博客文章",
     icon: "blog",
     prefix: "/_posts/",
