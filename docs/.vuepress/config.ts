@@ -25,6 +25,10 @@ export default defineUserConfig({
   //修改页面模板，@vuepress-theme-hope/templates/index.build.html
   templateBuild: path.resolve(__dirname, "templateBuild.html"),
 
+  //侧边栏配置
+  sidebar: "heading",
+
+
   plugins: [
     //algolia 全文搜索：没设置爬虫的话，需删除 docsearchPlugin 区块以使用节点搜索
     // docsearchPlugin({
