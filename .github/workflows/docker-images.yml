@@ -1,4 +1,4 @@
-name: actions
+name: build and push image
 
 on: [push, pull_request] # 触发事件
 
