@@ -1,10 +1,10 @@
 ---
 #博客首页设置：https://vuepress-theme-hope.github.io/v2/zh/guide/blog/home.html
-home: false 
+home: true
 layout: Blog
 icon: home
 bgImage: http://tc.seoipo.com/home-bg-1.jpg
-title: 菜鸡阿秋 
+title: 菜鸡阿秋
 #heroImage: /logo.svg
 heroText: 菜鸡阿秋
 heroFullScreen: false
