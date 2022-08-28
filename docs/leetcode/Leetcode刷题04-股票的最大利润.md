@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 股票的最大利润
 order: 4
 ---

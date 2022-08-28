@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 礼物最大的价值
 order: 5
 ---

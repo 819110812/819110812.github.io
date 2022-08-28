@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 地图分析
 order: 19
 ---

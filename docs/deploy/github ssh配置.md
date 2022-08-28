@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 配置github sshkey
 order: 1
 ---

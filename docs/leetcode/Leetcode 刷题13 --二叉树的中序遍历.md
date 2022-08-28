@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 二叉树的遍历
 order: 13
 ---

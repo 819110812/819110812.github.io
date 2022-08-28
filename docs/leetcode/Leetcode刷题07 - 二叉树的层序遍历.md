@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 二叉树的层序遍历
 order: 7
 ---

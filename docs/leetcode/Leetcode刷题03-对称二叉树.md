@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 对称二叉树
 order: 3
 ---

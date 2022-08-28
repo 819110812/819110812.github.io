@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 二叉树的镜像
 order: 17
 ---

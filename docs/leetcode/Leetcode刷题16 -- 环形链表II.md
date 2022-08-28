@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 环形链表2
 order: 16
 ---

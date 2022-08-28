@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 回文数
 order: 12
 ---

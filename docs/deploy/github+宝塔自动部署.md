@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: github+宝塔面板自动部署页面
 order: 2
 ---

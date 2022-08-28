@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 判断能否行程等差数列
 order: 11
 ---

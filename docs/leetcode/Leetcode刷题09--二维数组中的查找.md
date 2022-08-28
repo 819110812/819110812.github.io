@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 二维数组中的查找
 order: 9
 ---

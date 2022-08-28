@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 和为s的两个数 
 order: 18
 ---

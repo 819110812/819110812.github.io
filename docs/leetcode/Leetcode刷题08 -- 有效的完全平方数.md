@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 有效的完全平方数
 order: 8
 ---

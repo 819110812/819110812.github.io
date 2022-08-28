@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 寻找数组的中心索引
 order: 11
 ---

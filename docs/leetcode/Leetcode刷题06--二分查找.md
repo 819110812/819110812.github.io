@@ -1,5 +1,5 @@
 ---
-article: false
+article: true
 title: 二分查找
 order: 6
 ---

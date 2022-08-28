@@ -1,5 +1,5 @@
 ---
-article: false
+article: true 
 title: 二叉树的深度
 order: 1
 ---
