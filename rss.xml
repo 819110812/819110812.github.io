@@ -6,8 +6,8 @@
     <link>https://newzone.top/</link>
     <description>菜鸡阿秋的博客。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 27 Aug 2022 15:09:29 GMT</pubDate>
-    <lastBuildDate>Sat, 27 Aug 2022 15:09:29 GMT</lastBuildDate>
+    <pubDate>Sun, 28 Aug 2022 02:47:09 GMT</pubDate>
+    <lastBuildDate>Sun, 28 Aug 2022 02:47:09 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <item>
@@ -18,11 +18,12 @@
       <pubDate>Sat, 27 Aug 2022 10:09:27 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="todo-list" tabindex="-1"> TODO LIST</h1>
 <ul>
-<li><input type="checkbox" id="task-item-0" disabled="disabled"><label for="task-item-0"> 换成docker自动部署</label></li>
-<li><input type="checkbox" id="task-item-1" disabled="disabled"><label for="task-item-1"> 替换iconfont</label></li>
-<li><input type="checkbox" id="task-item-2" disabled="disabled"><label for="task-item-2"> 修改主题</label></li>
-<li><input type="checkbox" id="task-item-3" disabled="disabled"><label for="task-item-3"> 替换评论插件</label></li>
-<li><input type="checkbox" id="task-item-4" disabled="disabled"><label for="task-item-4"> 替换搜索插件</label></li>
+<li><input type="checkbox" id="task-item-0" checked="checked" disabled="disabled"><label for="task-item-0"> 非容器化部署</label></li>
+<li><input type="checkbox" id="task-item-1" disabled="disabled"><label for="task-item-1"> 换成docker自动部署</label></li>
+<li><input type="checkbox" id="task-item-2" disabled="disabled"><label for="task-item-2"> 替换iconfont</label></li>
+<li><input type="checkbox" id="task-item-3" disabled="disabled"><label for="task-item-3"> 修改主题</label></li>
+<li><input type="checkbox" id="task-item-4" disabled="disabled"><label for="task-item-4"> 替换评论插件</label></li>
+<li><input type="checkbox" id="task-item-5" disabled="disabled"><label for="task-item-5"> 替换搜索插件</label></li>
 </ul>
 ]]></content:encoded>
     </item>
