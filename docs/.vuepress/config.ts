@@ -6,7 +6,6 @@ import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
 import {feedPlugin} from "vuepress-plugin-feed2";
 import {path} from "@vuepress/utils";
 import theme from "./theme";
-import copyCodePlugin from "vuepress-plugin-copy-code2";
 
 export default defineUserConfig({
     //网站语言，默认为中文
@@ -31,12 +30,12 @@ export default defineUserConfig({
 
 
     plugins: [
-        copyCodePlugin({
-            // 插件选项
-            selector: ".theme-default-content div[class*=\"language-\"] pre",
-            showInMobile: true, // 是否在移动端显示代码复制按钮
-            duration: 3000, // 复制按钮提示的延迟时间，单位：毫秒
-        }),
+        // copyCodePlugin({
+        //     // 插件选项
+        //     selector: ".theme-default-content div[class*=\"language-\"] pre",
+        //     showInMobile: true, // 是否在移动端显示代码复制按钮
+        //     duration: 3000, // 复制按钮提示的延迟时间，单位：毫秒
+        // }),
         //algolia 全文搜索：没设置爬虫的话，需删除 docsearchPlugin 区块以使用节点搜索
         // docsearchPlugin({
         //   indexName: 'newzone',
@@ -51,11 +50,11 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-RWKZTY2P9R",
         }),
-        //rss 订阅描述
-        // feedPlugin({
-        //   hostname: "https://newzone.top",
-        //   rss: true,
-        //   count: 10,
-        // }),
+        // rss 订阅描述
+        feedPlugin({
+          hostname: "https://newzone.top",
+          rss: true,
+          count: 10,
+        }),
     ],
 });

@@ -98,7 +98,8 @@ export default hopeTheme({
     comment: {
       //部署 Waline：https://waline.js.org/guide/get-started.html
       provider: "Waline",
-      serverURL: "waline-1uugbly43-819110812.vercel.app",
+      // serverURL: "waline-1uugbly43-819110812.vercel.app",
+      serverURL: "http://150.158.52.112:8360",
       pageview: true,
       // Giscus 备用配置
       // provider: "Giscus",
