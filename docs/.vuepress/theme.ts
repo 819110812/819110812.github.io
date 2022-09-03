@@ -102,8 +102,8 @@ export default hopeTheme({
       provider: "Waline",
       // serverURL: "waline-1uugbly43-819110812.vercel.app",
       // serverURL: "doraemonaqiu.win",
-      // serverURL: "http://waline.waline.1385754288670612.cn-shanghai.fc.devsapp.net/",
-      serverURL: "http://150.158.52.112:8360/",
+      serverURL: "http://waline.waline.1385754288670612.cn-shanghai.fc.devsapp.net/",
+      // serverURL: "http://150.158.52.112:8360/",
       pageview: true,
       // Giscus 备用配置
       // provider: "Giscus",
