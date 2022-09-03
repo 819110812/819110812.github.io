@@ -3,12 +3,14 @@
 home: true
 layout: Blog
 icon: home
-bgImage: http://tc.seoipo.com/home-bg-1.jpg
 title: 菜鸡阿秋
-#heroImage: /logo.svg
+blog.roundAvatar: true
+plugins.blog.autoExcerpt: true
+heroImage: /icon.svg
+heroImageStyle: {borderRadius: "50%"}
 heroText: 菜鸡阿秋
 heroFullScreen: false
-tagline: 今天不学习，明天变垃圾
+tagline: talk is cheap, show me the code
 #projects:
 #  - icon: project
 #    name: 项目名称
