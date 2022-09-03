@@ -1,0 +1,53 @@
+edition: 1.0.0
+name: blog
+access: default
+
+vars:
+  region: cn-shanghai
+  service:
+    name: blog
+    description: 'aqiu blog'
+
+services:
+  framework:
+    component: nodejs-runtime
+    actions:
+      pre-deploy:
+        - run: npm install pnpm -g
+          path: ./
+        - run: pnpm add vuepress@2.0.0-beta.49 vuepress-theme-hope@2.0.0-beta.91 @vuepress/plugin-google-analytics@2.0.0-beta.49 @vuepress/plugin-search@2.0.0-beta.49 @vuepress/plugin-docsearch@2.0.0-beta.49
+          path: ./
+        - run: pnpm add vuepress-plugin-copy-code2@next
+          path: ./
+        - run: pnpm add vuepress-plugin-photo-swipe@next
+          path: ./
+        - run: pnpm docs:build
+          path: ./
+    props:
+      region: ${vars.region}
+      service: ${vars.service}
+      function:
+        name: ${vars.service.name}
+        description: ${vars.service.description}
+        runtime: nodejs14
+        ossBucket: golearning
+        codeUri: ./
+        handler: index.handler
+        memorySize: 256
+        timeout: 30
+      triggers:
+        - name: http-trigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
