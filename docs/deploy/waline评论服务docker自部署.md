@@ -15,9 +15,9 @@ order: 1
 ![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903120512.png)
 
 
-并且vercel也不是很稳定。所以，我就想着自己部署一个，然后用docker部署，这样就可以自己控制了。
+并且vercel也不是很稳定。也尝试过使用腾讯云的`Cloudbase`和阿里云的`函数计算`，都是踩了无数坑。前者`node`版本太低，直接报错，后者需要域名备案，直接达咩放弃。
 
-也尝试过使用腾讯云的`Cloudbase`和阿里云的`函数计算`，都是踩了无数坑。前者`node`版本太低，直接报错，后者需要域名备案，直接达咩放弃。
+所以，最后还是选择了`docker`部署，这样就可以自己随便整了。
 
 需要完成本教程的内容需要你拥有这些东西：
 - 服务器一台
@@ -113,6 +113,7 @@ CREATE TABLE `wl_Users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+配置完数据库，就可以测试一下咱们的页面了
 当你访问`host+8360`的时看到这个页面，就说明你部署成功了：
 ![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903121138.png)
 
