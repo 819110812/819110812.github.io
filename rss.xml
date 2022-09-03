@@ -6,8 +6,8 @@
     <link>https://newzone.top/</link>
     <description>菜鸡阿秋的博客。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 03 Sep 2022 05:09:05 GMT</pubDate>
-    <lastBuildDate>Sat, 03 Sep 2022 05:09:05 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Sep 2022 05:12:01 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Sep 2022 05:12:01 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>二叉树</category>
@@ -24,8 +24,8 @@
 <p>写在前面，为啥要整个自己部署的waline （waline是啥就不细说了）呢。一句话：就是为了访问稍微快点！</p>
 <p>在<a href="https://waline.js.org/guide/get-started.html" target="_blank" rel="noopener noreferrer">官方的教程</a>中，最简单易用的是<code>LeanCloud</code>+<code>Vercel</code>部署的做法。不得不说，如果放在之前，这个部署方式觉得是简单易用的，傻瓜式部署。但是奈何，现在leancloud已经不适合大陆访问了，</p>
 <p><img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903120512.png" alt="" loading="lazy"></p>
-<p>并且vercel也不是很稳定。所以，我就想着自己部署一个，然后用docker部署，这样就可以自己控制了。</p>
-<p>也尝试过使用腾讯云的<code>Cloudbase</code>和阿里云的<code>函数计算</code>，都是踩了无数坑。前者<code>node</code>版本太低，直接报错，后者需要域名备案，直接达咩放弃。</p>
+<p>并且vercel也不是很稳定。也尝试过使用腾讯云的<code>Cloudbase</code>和阿里云的<code>函数计算</code>，都是踩了无数坑。前者<code>node</code>版本太低，直接报错，后者需要域名备案，直接达咩放弃。</p>
+<p>所以，最后还是选择了<code>docker</code>部署，这样就可以自己随便整了。</p>
 <p>需要完成本教程的内容需要你拥有这些东西：</p>
 <ul>
 <li>服务器一台</li>
@@ -113,7 +113,8 @@
   <span><span>`</span>updatedAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
   <span>PRIMARY</span> <span>KEY</span> <span>(</span><span><span>`</span>id<span>`</span></span><span>)</span>
 <span>)</span> <span>ENGINE</span><span>=</span><span>InnoDB</span> <span>DEFAULT</span> <span>CHARSET</span><span>=</span>utf8mb4<span>;</span>
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>当你访问<code>host+8360</code>的时看到这个页面，就说明你部署成功了：
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>配置完数据库，就可以测试一下咱们的页面了
+当你访问<code>host+8360</code>的时看到这个页面，就说明你部署成功了：
 <img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903121138.png" alt="" loading="lazy"></p>
 <p>当然，别忘了顺带测一下你的登陆和评论功能，如果有问题，可以去<code>waline</code>的github仓库提issue。</p>
 <h2 id="配置我们的域名" tabindex="-1"> 配置我们的域名</h2>
