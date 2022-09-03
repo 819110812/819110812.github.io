@@ -6,12 +6,91 @@
     <link>https://newzone.top/</link>
     <description>菜鸡阿秋的博客。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 03 Sep 2022 07:58:56 GMT</pubDate>
-    <lastBuildDate>Sat, 03 Sep 2022 07:58:56 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Sep 2022 08:05:42 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Sep 2022 08:05:42 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>二叉树</category>
     <category>动态规划</category>
+    <item>
+      <title>k8s练习01</title>
+      <link>https://newzone.top/k8s/k8s%E7%BB%83%E4%B9%A001.html</link>
+      <guid>https://newzone.top/k8s/k8s%E7%BB%83%E4%B9%A001.html</guid>
+      <source url="https://newzone.top/rss.xml">k8s练习01</source>
+      <pubDate>Sat, 03 Sep 2022 07:48:27 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="k8s练习01" tabindex="-1"> k8s练习01</h1>
+<ol>
+<li>使用命令行创建一个叫<code>mynamespace</code>的命名空间，并且在这个命名中间中创建一个叫做nginx的nginx镜像pod</li>
+</ol>
+<details>  
+  <summary>answer</summary>  
+  <pre><code>kubectl create namespace mynamespace</code></pre>
+<pre><code>kubectl run nginx --image=nginx --restart=Never -n mynamespace</code></pre>  
+</details>
+<ol start="2">
+<li>使用yaml文件创建上一题的内容</li>
+</ol>
+<details>  
+  <summary>answer</summary>  
+  <pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+  namespace: mynamespace
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: IfNotPresent
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}kubectl create namespace mynamespace</code></pre>
+</details>
+<ol start="3">
+<li>使用<code>kubectl</code> 命令行创建一个运行着<code>env</code>命令的busybox的pod</li>
+</ol>
+<details>
+<summary>answer</summary>
+<pre><code>kubectl run busybox --image=busybox --command --restart=Never -it --rm -- env 
+kubectl run busybox --image=busybox --command --restart=Never -- env
+kubectl logs busybox</code></pre>
+</details>
+<ol start="4">
+<li>使用yaml创建上一题</li>
+</ol>
+<div><pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox
+  name: busybox
+spec:
+  containers:
+  - command:
+    - env
+    image: busybox
+    name: busybox
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><ol start="5">
+<li>创建一个<code>myns</code>的命名空间的yaml，但是不创建对应的命名空间</li>
+</ol>
+<p><code>kubectl create namespace myns --dry-run=client -o yaml &gt; myns.yaml</code></p>
+<ol start="6">
+<li>
+<p>创建一个<code>hard limit</code>  1 G cpu， 1G内存和2pod的名叫<code>myrq</code>的资源限制的yaml，但是不创建对应的资源</p>
+<p><code>kubectl create quota myrq --hard=cpu=1,memeory=1,pods=2 --dry-run=client -o yaml</code></p>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>Coming soon</title>
       <link>https://newzone.top/projects/1.html</link>
