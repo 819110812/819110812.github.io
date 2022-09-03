@@ -12,9 +12,11 @@ export default hopeTheme({
   //   url: "https://newzone.top",
   // },
 
-  iconAssets: "iconfont",
-  logo: "/logo.svg",
-  
+  iconAssets: "at.alicdn.com/t/c/font_3614191_jdeqy11h8mn.css",
+  logo: "/icon.svg",
+  // logo: "/logo.svg",
+  pure: true,
+
   //是否全局启用路径导航
   breadcrumb: false,
 
