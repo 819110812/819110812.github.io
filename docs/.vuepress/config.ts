@@ -6,6 +6,7 @@ import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
 import {feedPlugin} from "vuepress-plugin-feed2";
 import {path} from "@vuepress/utils";
 import theme from "./theme";
+import photoSwipePlugin from "vuepress-plugin-photo-swipe";
 
 export default defineUserConfig({
     //网站语言，默认为中文

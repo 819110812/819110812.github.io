@@ -64,8 +64,6 @@ export default sidebar([
         icon: "project",
         prefix: "/projects/",
         collapsable: true,
-        children: [
-            "/projects/1.md"
-        ]
+        children: "structure",
     }
 ]);
