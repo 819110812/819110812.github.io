@@ -1,0 +1,21 @@
+import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{o as n,c as i,e as t}from"./app.f41252ef.js";const s={},d=t(`<h1 id="leetcode\u5237\u989806-\u4E8C\u5206\u67E5\u627E" tabindex="-1"><a class="header-anchor" href="#leetcode\u5237\u989806-\u4E8C\u5206\u67E5\u627E" aria-hidden="true">#</a> Leetcode\u5237\u989806--\u4E8C\u5206\u67E5\u627E</h1><p>\u5237\u4E00\u9053\u7ECF\u5178\u7684\u7B97\u6CD5\uFF0C\u4E8C\u5206\u67E5\u627E\uFF0C\u867D\u7136\u662F\u7ECF\u5178\u7B97\u6CD5\u4F46\u662F\u6709\u5F88\u591A\u7EC6\u8282\u5728\u5199\u7684\u65F6\u5019\u4E5F\u662F\u8981\u6CE8\u610F\u7684\uFF0C\u4E0D\u7ECF\u610F\u95F4\u53EF\u80FD\u5C31\u4F1A\u5C11\u52A0\u4E2A1\u591A\u52A0\u4E2A1</p><p>\u7ED9\u5B9A\u4E00\u4E2A n \u4E2A\u5143\u7D20\u6709\u5E8F\u7684\uFF08\u5347\u5E8F\uFF09\u6574\u578B\u6570\u7EC4 nums \u548C\u4E00\u4E2A\u76EE\u6807\u503C target \uFF0C\u5199\u4E00\u4E2A\u51FD\u6570\u641C\u7D22 nums \u4E2D\u7684 target\uFF0C\u5982\u679C\u76EE\u6807\u503C\u5B58\u5728\u8FD4\u56DE\u4E0B\u6807\uFF0C\u5426\u5219\u8FD4\u56DE -1\u3002</p><p>\u793A\u4F8B 1:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>\u8F93\u5165: nums = [-1,0,3,5,9,12], target = 9
+\u8F93\u51FA: 4
+\u89E3\u91CA: 9 \u51FA\u73B0\u5728 nums \u4E2D\u5E76\u4E14\u4E0B\u6807\u4E3A 4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>\u793A\u4F8B 2:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>\u8F93\u5165: nums = [-1,0,3,5,9,12], target = 2
+\u8F93\u51FA: -1
+\u89E3\u91CA: 2 \u4E0D\u5B58\u5728 nums \u4E2D\u56E0\u6B64\u8FD4\u56DE -1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>\u89E3\u6CD51\uFF1A \u4F20\u7EDF\u4E8C\u5206\u67E5\u627E</p><div class="language-Python ext-Python line-numbers-mode"><pre class="language-Python"><code>def search(self, nums: List[int], target: int) -&gt; int:
+		left,right = 0,len(nums)-1
+		while left&lt;=right:
+			mid = (right+left)//2  # \u5730\u677F\u9664
+			if target&lt; nums[mid]: right = mid-1 #\u5982\u679C\u5C0F\u4E8E\uFF0C\u5219\u8BF4\u660E\u76EE\u6807\u503C\u51FA\u73B0\u5728mid\u7684\u5DE6\u4FA7
+			elif target &gt; nums[mid]: left = mid+1 #\u5982\u679C\u5927\u4E8E\uFF0C\u5219\u8BF4\u660E\u76EE\u6807\u51FA\u73B0\u5728mid\u7684\u53F3\u4FA7
+			else: return mid # \u5982\u679C\u7B49\u4E8E\uFF0C\u76F4\u63A5\u8FD4\u56DEmid\uFF0C\u5C31\u662F\u6211\u4EEC\u8981\u7684\u76EE\u6807\u7D22\u5F15
+		return	-1 #\u4E0D\u5B58\u5728\u5C31\u8FD4\u56DE-1
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://img-blog.csdnimg.cn/20200530135114938.png" alt="\u5728\u8FD9\u91CC\u63D2\u5165\u56FE\u7247\u63CF\u8FF0" loading="lazy"> \u8FD0\u884C\u7684\u6548\u7387\u4E0D\u662F\u5F88\u9AD8\u3002\u5F53\u7136\u4E5F\u53EF\u4EE5\u7528\u6296\u673A\u7075\u7684\u65B9\u6CD5\u6765\u5B9E\u73B0\uFF1A</p><p>\u89E3\u6CD52\uFF1A</p><div class="language-Python ext-Python line-numbers-mode"><pre class="language-Python"><code>def search(self, nums: List[int], target: int) -&gt; int:
+		if target in nums:
+			return nums.index(target)
+		eles:
+			return -1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>\u8FD9\u79CD\u65B9\u6CD5\uFF0C\u7B80\u6D01\uFF0C\u4F46\u662F\u6548\u7387\u4E0D\u9AD8\uFF0C\u56E0\u4E3A\u4F60\u6709\u4E00\u4E2A<code>in</code>\u64CD\u4F5C\u8FD9\u4E2A\u662FO\uFF08n\uFF09\u7684\u65F6\u95F4\u590D\u6742\u5EA6\u3002</p>`,13),l=[d];function a(r,c){return n(),i("div",null,l)}var v=e(s,[["render",a],["__file","Leetcode\u5237\u989806--\u4E8C\u5206\u67E5\u627E.html.vue"]]);export{v as default};
