@@ -6,8 +6,8 @@
     <link>https://newzone.top/</link>
     <description>菜鸡阿秋的博客。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 03 Sep 2022 05:12:01 GMT</pubDate>
-    <lastBuildDate>Sat, 03 Sep 2022 05:12:01 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Sep 2022 05:59:20 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Sep 2022 05:59:20 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>二叉树</category>
@@ -132,7 +132,8 @@
 点击创建好的站点的设置，开始配置反向代理.(注：我们这边SSL可以不用部署，因为cloudflare自带一个免费的SSL证书)
 <img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903130148.png" alt="" loading="lazy">
 <img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903130404.png" alt="" loading="lazy"></p>
-<p>这个时候，就可以在浏览器中输入我们的域名，看到waline运行起来了!!!</p>
+<p>这个时候，就可以在浏览器中输入我们的域名，看到waline运行起来了!!!
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903135649.png" alt="" loading="lazy"></p>
 <h1 id="小结" tabindex="-1"> 小结</h1>
 <p>这边文章主要就是给大家提供一个简单的waline docker部署的思路，优点是咱们的服务是自己维护的，可以任意更改，并且可以通过域名优雅的访问，
 缺点就是这个部署方式是比较简陋的，难以承载很大的并发，评论的相应速度也是取决于咱们服务器的性能。</p>
