@@ -19,7 +19,8 @@ export default navbar([
       text: "k8s",
         icon: "k8s",
         children: [
-            "/k8s/k8s练习01.md"
+            "/k8s/k8s练习01.md",
+            "/k8s/k8s练习02.md",
         ]
     }
     // {text: "代码", icon: "blog", prefix: "/code/", link: "", collapsable: true, children: "structure"},
