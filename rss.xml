@@ -6,13 +6,138 @@
     <link>https://newzone.top/</link>
     <description>菜鸡阿秋的博客。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 03 Sep 2022 03:39:26 GMT</pubDate>
-    <lastBuildDate>Sat, 03 Sep 2022 03:39:26 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Sep 2022 05:09:05 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Sep 2022 05:09:05 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>二叉树</category>
     <category>动态规划</category>
     <category>搜索</category>
+    <item>
+      <title>waline评论服务docker自部署</title>
+      <link>https://newzone.top/deploy/waline%E8%AF%84%E8%AE%BA%E6%9C%8D%E5%8A%A1docker%E8%87%AA%E9%83%A8%E7%BD%B2.html</link>
+      <guid>https://newzone.top/deploy/waline%E8%AF%84%E8%AE%BA%E6%9C%8D%E5%8A%A1docker%E8%87%AA%E9%83%A8%E7%BD%B2.html</guid>
+      <source url="https://newzone.top/rss.xml">waline评论服务docker自部署</source>
+      <pubDate>Sat, 03 Sep 2022 05:07:35 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="waline评论服务docker自部署手册-无备案域名配置" tabindex="-1"> Waline评论服务docker自部署手册 + 无备案域名配置</h1>
+<h2 id="序" tabindex="-1"> 序</h2>
+<p>写在前面，为啥要整个自己部署的waline （waline是啥就不细说了）呢。一句话：就是为了访问稍微快点！</p>
+<p>在<a href="https://waline.js.org/guide/get-started.html" target="_blank" rel="noopener noreferrer">官方的教程</a>中，最简单易用的是<code>LeanCloud</code>+<code>Vercel</code>部署的做法。不得不说，如果放在之前，这个部署方式觉得是简单易用的，傻瓜式部署。但是奈何，现在leancloud已经不适合大陆访问了，</p>
+<p><img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903120512.png" alt="" loading="lazy"></p>
+<p>并且vercel也不是很稳定。所以，我就想着自己部署一个，然后用docker部署，这样就可以自己控制了。</p>
+<p>也尝试过使用腾讯云的<code>Cloudbase</code>和阿里云的<code>函数计算</code>，都是踩了无数坑。前者<code>node</code>版本太低，直接报错，后者需要域名备案，直接达咩放弃。</p>
+<p>需要完成本教程的内容需要你拥有这些东西：</p>
+<ul>
+<li>服务器一台</li>
+<li>域名一枚</li>
+<li>或者信用卡一张（用于购买域名）</li>
+<li>给你的服务器装上宝塔用来配置域名（命令行配置也是可以的）</li>
+</ul>
+<p>废话不多说，上才艺！</p>
+<h2 id="先把waline部署起来" tabindex="-1"> 先把waline部署起来</h2>
+<p>我这边采用的是<code>docker-compose</code>的方式部署的，所以需要先安装<code>docker</code>和<code>docker-compose</code>。
+安装过程就不细讲了，直接上yaml文件</p>
+<div><pre><code><span>version</span><span>:</span> <span>'3.8'</span>
+<span>services</span><span>:</span>
+  <span>web</span><span>:</span>
+    <span>image</span><span>:</span> <span>'lizheming/waline'</span>
+    <span>restart</span><span>:</span> always
+    <span>ports</span><span>:</span>
+      <span>-</span> <span>'8360:8360'</span>
+    <span>environment</span><span>:</span>
+      <span>MYSQL_DB</span><span>:</span> <span>'waline'</span>
+      <span>MYSQL_USER</span><span>:</span> <span>'root'</span>
+      <span>MYSQL_PASSWORD</span><span>:</span> <span>'root'</span>
+      <span>MYSQL_HOST</span><span>:</span> <span>'db'</span>
+      <span>MYSQL_PORT</span><span>:</span> <span>'3306'</span>
+
+  <span>db</span><span>:</span>
+    <span>image</span><span>:</span> <span>'mysql:5.7'</span>
+    <span>restart</span><span>:</span> always
+    <span>ports</span><span>:</span>
+      <span>-</span> <span>'3306:3306'</span>
+    <span>environment</span><span>:</span>
+      <span>MYSQL_ROOT_PASSWORD</span><span>:</span> <span>'root'</span>
+      <span>MYSQL_DATABASE</span><span>:</span> <span>'waline'</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>一个极度偷懒的yaml，为了后续维护，建议大家把volume挂载起来，这样就可以真正的stateless了。
+由于咱们的数据库是全新的，所以还需要手动将表创建出来。</p>
+<div><pre><code><span># CREATE DATABASE waline DEFAULT CHARACTER SET utf8mb4;</span>
+<span>use</span> waline<span>;</span>
+
+<span>CREATE</span> <span>TABLE</span> <span><span>`</span>wl_Comment<span>`</span></span> <span>(</span>
+  <span><span>`</span>id<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>unsigned</span> <span>NOT</span> <span>NULL</span> <span>AUTO_INCREMENT</span><span>,</span>
+  <span><span>`</span>user_id<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>comment<span>`</span></span> <span>text</span><span>,</span>
+  <span><span>`</span>insertedAt<span>`</span></span> <span>timestamp</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span><span>`</span>ip<span>`</span></span> <span>varchar</span><span>(</span><span>100</span><span>)</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>link<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>mail<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>nick<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>pid<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>rid<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>sticky<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>status<span>`</span></span> <span>varchar</span><span>(</span><span>50</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>ua<span>`</span></span> <span>text</span><span>,</span>
+  <span><span>`</span>url<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>createdAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span><span>`</span>updatedAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span>PRIMARY</span> <span>KEY</span> <span>(</span><span><span>`</span>id<span>`</span></span><span>)</span>
+<span>)</span> <span>ENGINE</span><span>=</span><span>InnoDB</span> <span>DEFAULT</span> <span>CHARSET</span><span>=</span>utf8mb4<span>;</span>
+
+<span>CREATE</span> <span>TABLE</span> <span><span>`</span>wl_Counter<span>`</span></span> <span>(</span>
+  <span><span>`</span>id<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>unsigned</span> <span>NOT</span> <span>NULL</span> <span>AUTO_INCREMENT</span><span>,</span>
+  <span><span>`</span>time<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>url<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>createdAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span><span>`</span>updatedAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span>PRIMARY</span> <span>KEY</span> <span>(</span><span><span>`</span>id<span>`</span></span><span>)</span>
+<span>)</span> <span>ENGINE</span><span>=</span><span>InnoDB</span> <span>DEFAULT</span> <span>CHARSET</span><span>=</span>utf8mb4<span>;</span>
+
+<span>CREATE</span> <span>TABLE</span> <span><span>`</span>wl_Users<span>`</span></span> <span>(</span>
+  <span><span>`</span>id<span>`</span></span> <span>int</span><span>(</span><span>11</span><span>)</span> <span>unsigned</span> <span>NOT</span> <span>NULL</span> <span>AUTO_INCREMENT</span><span>,</span>
+  <span><span>`</span>display_name<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>email<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>password<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>type<span>`</span></span> <span>varchar</span><span>(</span><span>50</span><span>)</span> <span>NOT</span> <span>NULL</span> <span>DEFAULT</span> <span>''</span><span>,</span>
+  <span><span>`</span>url<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>avatar<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>github<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>twitter<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>facebook<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>google<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>weibo<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>qq<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>label<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>2fa<span>`</span></span> <span>varchar</span><span>(</span><span>255</span><span>)</span> <span>DEFAULT</span> <span>NULL</span><span>,</span>
+  <span><span>`</span>createdAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span><span>`</span>updatedAt<span>`</span></span> <span>timestamp</span> <span>NULL</span> <span>DEFAULT</span> <span>CURRENT_TIMESTAMP</span><span>,</span>
+  <span>PRIMARY</span> <span>KEY</span> <span>(</span><span><span>`</span>id<span>`</span></span><span>)</span>
+<span>)</span> <span>ENGINE</span><span>=</span><span>InnoDB</span> <span>DEFAULT</span> <span>CHARSET</span><span>=</span>utf8mb4<span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>当你访问<code>host+8360</code>的时看到这个页面，就说明你部署成功了：
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903121138.png" alt="" loading="lazy"></p>
+<p>当然，别忘了顺带测一下你的登陆和评论功能，如果有问题，可以去<code>waline</code>的github仓库提issue。</p>
+<h2 id="配置我们的域名" tabindex="-1"> 配置我们的域名</h2>
+<h3 id="购买域名" tabindex="-1"> 购买域名</h3>
+<p>我这边使用的是cloudflare的域名可以在cloudflare域注册中点击注册域
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903125138.png" alt="" loading="lazy"></p>
+<p>在里面选择咱们需要购买的域名 （这里需要你拥有一张信用卡）</p>
+<h3 id="配置域名" tabindex="-1"> 配置域名</h3>
+<p>当我们拥有了我们自己的域名后，可以在服务器上配置上我们的域名了
+首先，将我们域名解析绑定到我们的服务器上，这一步需要你在DNS的设置中添加一天A记录，将你的域名解析到你的服务器IP上
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903125500.png" alt="" loading="lazy">
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903125709.png" alt="" loading="lazy">
+然后在宝塔上创建一条网站记录，将我们的域名绑定到我们的网站上
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903130024.png" alt="" loading="lazy">
+点击创建好的站点的设置，开始配置反向代理.(注：我们这边SSL可以不用部署，因为cloudflare自带一个免费的SSL证书)
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903130148.png" alt="" loading="lazy">
+<img src="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903130404.png" alt="" loading="lazy"></p>
+<p>这个时候，就可以在浏览器中输入我们的域名，看到waline运行起来了!!!</p>
+<h1 id="小结" tabindex="-1"> 小结</h1>
+<p>这边文章主要就是给大家提供一个简单的waline docker部署的思路，优点是咱们的服务是自己维护的，可以任意更改，并且可以通过域名优雅的访问，
+缺点就是这个部署方式是比较简陋的，难以承载很大的并发，评论的相应速度也是取决于咱们服务器的性能。</p>
+]]></content:encoded>
+      <enclosure url="https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220903120512.png" type="image/png"/>
+    </item>
     <item>
       <title>配置github sshkey</title>
       <link>https://newzone.top/deploy/github%20ssh%E9%85%8D%E7%BD%AE.html</link>
@@ -465,71 +590,6 @@ if __name__ == '__main__':
 </code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>这种方法，简洁，但是效率不高，因为你有一个<code>in</code>操作这个是O（n）的时间复杂度。</p>
 ]]></content:encoded>
       <enclosure url="https://img-blog.csdnimg.cn/20200530135114938.png" type="image/png"/>
-    </item>
-    <item>
-      <title>二叉树的层序遍历</title>
-      <link>https://newzone.top/leetcode/Leetcode%E5%88%B7%E9%A2%9807%20-%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</link>
-      <guid>https://newzone.top/leetcode/Leetcode%E5%88%B7%E9%A2%9807%20-%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</guid>
-      <source url="https://newzone.top/rss.xml">二叉树的层序遍历</source>
-      <category>二叉树</category>
-      <pubDate>Sat, 27 Aug 2022 13:41:52 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="leetcode刷题07-二叉树的层序遍历" tabindex="-1"> Leetcode刷题07 - 二叉树的层序遍历</h1>
-<p>给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。</p>
-<p>示例：</p>
-<div><pre><code>二叉树：[3,9,20,null,null,15,7],
-
-    3
-   / \
-  9  20
-    /  \
-   15   7
-返回其层次遍历结果：
-
-[
-  [3],
-  [9,20],
-  [15,7]
-]
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>我的解法：</p>
-<div><pre><code>def levelOrder(self, root: TreeNode) -&gt; List[List[int]]:
-        if not root : 
-            return []
-        arr , res = [root],[]
-        while arr:
-            temp = []
-            temp_res = []
-            for node in arr:
-                temp_res.append(node.val)
-                if node.left: temp.append(node.left)
-                if node.right:temp.append(node.right)
-            arr = temp
-            res.append(temp_res)
-        return res
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>广度优先遍历，但是很明显，这个写法的内存消耗很是严重啊。优化方法暂时还没想到，看到的很多写法都和这个类似，区别在于部分使用到了队列来实现，但是跑下来效果没差，hmmmm，优化方法暂且放到一边，待日后再整。
-贴一波使用队列的方法：</p>
-<div><pre><code>def levelOrder(self, root):
-		queue = collections.deque()
-        queue.append(root)
-        res = []
-        while queue:
-            size = len(queue)
-            level = []
-            for _ in range(size):
-                cur = queue.popleft()
-                if not cur:
-                    continue
-                level.append(cur.val)
-                queue.append(cur.left)
-                queue.append(cur.right)
-            if level:
-                res.append(level)
-        return res
-
-作者：fuxuemingzhu
-链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/tao-mo-ban-bfs-he-dfs-du-ke-yi-jie-jue-by-fuxuemin/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
