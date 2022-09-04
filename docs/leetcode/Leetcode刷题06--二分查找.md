@@ -49,3 +49,5 @@ def search(self, nums: List[int], target: int) -> int:
 			return -1
 ```
 这种方法，简洁，但是效率不高，因为你有一个``in``操作这个是O（n）的时间复杂度。
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

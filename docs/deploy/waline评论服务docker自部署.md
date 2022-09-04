@@ -142,3 +142,6 @@ CREATE TABLE `wl_Users` (
 # 小结
 这边文章主要就是给大家提供一个简单的waline docker部署的思路，优点是咱们的服务是自己维护的，可以任意更改，并且可以通过域名优雅的访问，
 缺点就是这个部署方式是比较简陋的，难以承载很大的并发，评论的相应速度也是取决于咱们服务器的性能。
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

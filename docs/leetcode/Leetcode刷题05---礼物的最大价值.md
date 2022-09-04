@@ -83,3 +83,5 @@ class Solution:
 ```
 这是官方给出的第二种解法，提前初始化，减少了判断的冗余，hmmmm，妙啊！
 回顾一下自己的写法，相比之下，解释性不是那么的通俗易懂，额外空间偏大。
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

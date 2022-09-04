@@ -62,3 +62,6 @@ class Solution:
 
 
 该方法虽然看起来简洁，但是运行时间比第一个多很多
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

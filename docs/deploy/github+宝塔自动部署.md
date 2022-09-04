@@ -44,3 +44,5 @@ npm run
 ### 缺点：
 - 需要手动配置很多环境
 - 如果部署或者拉取失败，没有及时反馈机制
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

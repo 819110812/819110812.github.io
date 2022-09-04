@@ -40,3 +40,6 @@ class Solution:
 - 右子树是平衡树 即 self.isBalanced(root.right)
 
 提交的结果运行时间不是很优秀，还有待改善！
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

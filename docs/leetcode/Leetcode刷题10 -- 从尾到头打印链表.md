@@ -40,3 +40,5 @@ class Solution:
     def reversePrint(self, head: ListNode) -> List[int]:
         return self.reversePrint(head.next) + [head.val] if head else []
 ```
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

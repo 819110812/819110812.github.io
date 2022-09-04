@@ -68,3 +68,6 @@ def isPerfectSquare(self, num: int) -> bool:
 作者：LeetCode
 链接：https://leetcode-cn.com/problems/valid-perfect-square/solution/you-xiao-de-wan-quan-ping-fang-shu-by-leetcode/
 ```
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

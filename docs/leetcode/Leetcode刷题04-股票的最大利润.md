@@ -65,3 +65,5 @@ class Solution:
 来源：力扣（LeetCode）
 ```
 基本思路是一致的，都是记录下当前的最小值和最大利润，然后计算判断，不过官方的明显要比我自己写的简练很多，hmmmm，还有好多要走呢，奥利给！
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)

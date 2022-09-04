@@ -80,3 +80,6 @@ def isSymmetric(self, root: TreeNode) -> bool:
 
 大致总结一下思路过程：
 看到二叉树，想到要去写个递归，然后考虑这个递归的要素怎么设计，递归的主要实现，最后再去优化。
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)
