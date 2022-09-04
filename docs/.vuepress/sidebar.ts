@@ -52,6 +52,14 @@ export default sidebar([
         children: "structure",
     },
     {
+        text: "acp",
+        icon: "",
+        prefix: "/acp/",
+        link: "",
+        collapsable: true,
+        children: "structure",
+    },
+    {
         text: "计划",
         icon: "blog",
         prefix: "/plans/",

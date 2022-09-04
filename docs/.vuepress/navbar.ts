@@ -22,6 +22,13 @@ export default navbar([
             "/k8s/k8s练习01.md",
             "/k8s/k8s练习02.md",
         ]
+    },
+    {
+        text: "acp",
+        icon: "acp",
+        children: [
+            "/acp/弹性伸缩.md"
+        ]
     }
     // {text: "代码", icon: "blog", prefix: "/code/", link: "", collapsable: true, children: "structure"},
     // {text: "devops", icon: "blog", prefix: "/deploy/", link: "", collapsable: true, children: "structure"},
