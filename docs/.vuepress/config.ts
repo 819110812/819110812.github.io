@@ -51,11 +51,11 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-RWKZTY2P9R",
         }),
-        // rss 订阅描述
-        feedPlugin({
-          hostname: "https://newzone.top",
-          rss: true,
-          count: 10,
-        }),
+        // // rss 订阅描述
+        // feedPlugin({
+        //   hostname: "https://newzone.top",
+        //   rss: true,
+        //   count: 10,
+        // }),
     ],
 });

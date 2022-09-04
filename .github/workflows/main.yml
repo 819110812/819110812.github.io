@@ -21,13 +21,13 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 7.9.5
           run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build Docs
@@ -36,7 +36,6 @@ jobs:
         run: |
           pnpm add vuepress@2.0.0-beta.49 vuepress-theme-hope@2.0.0-beta.91 @vuepress/plugin-google-analytics@2.0.0-beta.49 @vuepress/plugin-search@2.0.0-beta.49 @vuepress/plugin-docsearch@2.0.0-beta.49 
           pnpm add vuepress-plugin-copy-code2@next
-          pnpm add vuepress-plugin-photo-swipe@next
           pnpm docs:build
 
       - name: Deploy

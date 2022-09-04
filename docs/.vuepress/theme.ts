@@ -18,7 +18,7 @@ export default hopeTheme({
   pure: true,
 
   //是否全局启用路径导航
-  breadcrumb: false,
+  breadcrumb: true,
 
   //页面元数据：贡献者，最后修改时间，编辑链接
   contributors: false,
@@ -70,6 +70,7 @@ export default hopeTheme({
 
   //https://vuepress-theme-hope.github.io/v2/zh/config/theme/feature.html
   blog: {
+    name: "菜鸡阿秋",
     articleInfo: ["Date", "Category", "Tag", "ReadingTime", "PageView"],
     // name: "清顺",
     // avatar: "/avatar_self.webp",
