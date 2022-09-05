@@ -1,20 +1,31 @@
 {
-  "name": "vuepress-theme-hope-template",
-  "version": "2.0.0",
+  "name": "theme-vdoing-blog",
+  "version": "1.0.0",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache"
+    "dev": "node --max_old_space_size=4096 vuepress-theme-vdoing/node_modules/vuepress/cli.js dev docs",
+    "build": "node --max_old_space_size=4096 vuepress-theme-vdoing/node_modules/vuepress/cli.js build docs",
+    "deploy": "bash deploy.sh",
+    "editFm": "node utils/editFrontmatter.js",
+    "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
+    "publish": "cd vdoing && npm publish && cd .. && yarn updateTheme",
+    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf vuepress-theme-vdoing/node_modules && yarn && yarn add vuepress-theme-vdoing -D"
   },
-  "dependencies": {
-    "@vuepress/client": "2.0.0-beta.49",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.49",
-    "@vuepress/plugin-google-analytics": "2.0.0-beta.49",
-    "@vuepress/plugin-search": "2.0.0-beta.49",
-    "pnpm": "^7.9.5",
-    "vue": "^3.2.37",
-    "vuepress": "2.0.0-beta.49",
-    "vuepress-plugin-copy-code2": "2.0.0-beta.93",
-    "vuepress-theme-hope": "2.0.0-beta.91"
+  "license": "MIT",
+  "devDependencies": {
+    "dayjs": "^1.9.7",
+    "inquirer": "^7.1.0",
+    "json2yaml": "^1.1.0",
+    "vuepress": "1.9.5",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-baidu-tongji": "^1.0.1",
+    "vuepress-plugin-comment": "^0.7.3",
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
+    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-thirdparty-search": "^1.0.2",
+    "vuepress-plugin-zooming": "^1.1.7",
+    "vuepress-theme-vdoing": "^1.12.8",
+    "yamljs": "^0.3.0"
   }
 }

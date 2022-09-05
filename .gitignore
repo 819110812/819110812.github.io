@@ -1,7 +1,26 @@
-node_modules
-docs/.vuepress/.temp
-docs/.vuepress/.cache
+# npm
+../package-lock.json
+vuepress-theme-vdoing/node_modules
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# pnpm
+pnpm-lock.yaml
+
+# vscode
+.vscode
+
+# vuepress
 docs/.vuepress/dist
-docs/_temp
-docs/_gsdata_
+
+# 百度链接推送
+urls.txt
+
+# mac
+.DS_Store
+
 .idea
+
+node_modules
