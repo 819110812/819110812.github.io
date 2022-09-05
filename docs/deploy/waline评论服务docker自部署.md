@@ -1,6 +1,7 @@
 ---
 article: true
-title: waline评论服务docker自部署 
+title: waline评论服务docker自部署
+star: true
 tag: devops
 order: 1
 ---
