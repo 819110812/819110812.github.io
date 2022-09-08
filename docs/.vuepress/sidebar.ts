@@ -19,14 +19,6 @@ export default sidebar([
         children: "structure",
     },
     {
-        text: "代码",
-        icon: "",
-        prefix: "/code/",
-        link: "",
-        collapsable: true,
-        children: "structure",
-    },
-    {
         text: "Leetcode",
         icon: "",
         prefix: "/leetcode/",
@@ -59,6 +51,23 @@ export default sidebar([
         collapsable: true,
         children: "structure",
     },
+    {
+        text: "java",
+        icon: "",
+        prefix: "/java/",
+        link: "",
+        collapsable: true,
+        children: "structure",
+    },
+    {
+        text: "go",
+        icon: "",
+        prefix: "/go/",
+        link: "",
+        collapsable: true,
+        children: "structure",
+    }
+    ,
     {
         text: "计划",
         icon: "blog",

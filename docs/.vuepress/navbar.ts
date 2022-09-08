@@ -32,6 +32,13 @@ export default navbar([
         children: [
             "/java/springboot笔记01.md",
             ]
+    },
+    {
+        text: "go",
+        icon: "go",
+        children: [
+            "/go/如何理解和使用go context.md",
+        ]
     }
     // {text: "代码", icon: "blog", prefix: "/code/", link: "", collapsable: true, children: "structure"},
     // {text: "devops", icon: "blog", prefix: "/deploy/", link: "", collapsable: true, children: "structure"},
