@@ -38,4 +38,9 @@ CLB原来是阿里云的一个产品，后来被整合到了SLB中，现在的CL
 - 四层的（TCP/UDP）通过源IP实现会话保持
 
 
+### 关于网络峰值
+如果一个10MS的负载均衡实例，该实例下有ABC三台服务器， A的峰值是4MB，即使A实例没有任何流量进来，BC能接收到的流量峰值也只有6MB,因为A的4MB会被预留
+
+
+
 ![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)
