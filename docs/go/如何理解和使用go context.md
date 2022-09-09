@@ -28,9 +28,13 @@ context包提供了一个上下文，可以在多个goroutine之间传递数据�
 ### context.WithValue()
 作用：设置键值对，返回一个新的上下文，这个上下文和原来的上下文是同一个父节点，但是有不同的值。
 
-### time.AfterFunc() (对比)
+### context 和 time.AfterFunc() (对比)
 作用：在指定的时间后，执行一个函数。对比context.WithTimeout()，time.AfterFunc()只能执行一个函数，而context.WithTimeout()可以执行多个函数。
 
 ## context父子关系
 context实例间存在父子关系，当一个context被取消时，它的所有子context都会被取消。
+
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)
 
