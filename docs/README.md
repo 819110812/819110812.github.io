@@ -14,9 +14,13 @@ heroFullScreen: false
 tagline: talk is cheap, show me the code
 projects:
   - icon: project
-    name: eletron 
-    desc: eletron学习
-    link: /eletron/编写第一个eletron程序.md/
+    name: java
+    desc: java学习
+    link: /java/springboot笔记01.md/
+  - icon: project
+    name: go
+    desc: go学习
+    link: /go/如何理解和使用go context.md/
   - icon: project
     name: k8s
     desc: k8s学习
@@ -26,13 +30,10 @@ projects:
     desc: acp学习
     link: /acp/ECS.md/
   - icon: project
-    name: java
-    desc: java学习
-    link: /java/springboot笔记01.md/
-  - icon: project
-    name: go
-    desc: go学习
-    link: /go/如何理解和使用go context.md/
+    name: eletron
+    desc: eletron学习
+    link: /eletron/编写第一个eletron程序.md/
+
 #
 #  - icon: link
 #    name: 链接名称
