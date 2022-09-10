@@ -69,18 +69,26 @@ export default sidebar([
     }
     ,
     {
-        text: "计划",
-        icon: "blog",
-        prefix: "/plans/",
+        text: "eletron",
+        icon: "",
+        prefix: "/eletron/",
         link: "",
         collapsable: true,
         children: "structure",
-    },
-    {
-        text: "项目",
-        icon: "project",
-        prefix: "/projects/",
-        collapsable: true,
-        children: "structure",
     }
+    // {
+    //     text: "计划",
+    //     icon: "blog",
+    //     prefix: "/plans/",
+    //     link: "",
+    //     collapsable: true,
+    //     children: "structure",
+    // },
+    // {
+    //     text: "项目",
+    //     icon: "project",
+    //     prefix: "/projects/",
+    //     collapsable: true,
+    //     children: "structure",
+    // }
 ]);

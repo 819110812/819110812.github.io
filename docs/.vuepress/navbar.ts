@@ -4,14 +4,14 @@ import {navbar} from "vuepress-theme-hope";
 export default navbar([
     {text: "首页", link: "/home", icon: "icon-shouye"},
     {text: "计划", icon: "plan", link: "/plans/TodoList"},
-    {text: "工具", icon: "tool", link: "/tools"},
+    // {
+    //     text: "项目",
+    //     icon: "project",
+    //     children: [
+    //         "/projects/1.md"
+    //     ]
+    // },
     {
-        text: "项目",
-        icon: "project",
-        children: [
-            "/projects/1.md"
-        ]
-    },{
       text: "k8s",
         icon: "k8s",
         children: [
@@ -38,6 +38,13 @@ export default navbar([
         icon: "go",
         children: [
             "/go/如何理解和使用go context.md",
+            "/go/golang 并发编程sync包.md"
+        ]
+    }, {
+        text: "eletron",
+        icon: "eletron",
+        children: [
+            "/eletron/编写第一个eletron程序.md",
         ]
     }
     // {text: "代码", icon: "blog", prefix: "/code/", link: "", collapsable: true, children: "structure"},
