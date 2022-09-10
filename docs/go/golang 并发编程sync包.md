@@ -4,7 +4,7 @@ title: golang并发编程 sync包
 star: true
 tag:
 - go
-  order: 2
+order: 2
 ---
 
 # golang并发编程 sync包
