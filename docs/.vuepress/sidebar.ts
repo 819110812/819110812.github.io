@@ -44,6 +44,15 @@ export default sidebar([
         children: "structure",
     },
     {
+        text: "k8s",
+        icon: "",
+        prefix: "/k8s/",
+        link: "",
+        collapsable: true,
+        children: "structure",
+    }
+    ,
+    {
         text: "acp",
         icon: "",
         prefix: "/acp/",
