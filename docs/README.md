@@ -4,6 +4,7 @@ home: true
 layout: Blog
 icon: home
 title: 菜鸡阿秋
+bgImage: https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220910164943.png
 blog.roundAvatar: true
 plugins.blog.autoExcerpt: true
 heroImage: /icon.svg
