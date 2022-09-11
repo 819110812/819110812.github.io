@@ -14,6 +14,10 @@ heroFullScreen: false
 tagline: talk is cheap, show me the code
 projects:
   - icon: project
+    name : 软件架构
+    desc : 分享一些架构方面的思考
+    link : /arch/目录.md/ 
+  - icon: project
     name: java
     desc: java学习
     link: /java/springboot笔记01.md/
@@ -33,6 +37,10 @@ projects:
     name: eletron
     desc: eletron学习
     link: /eletron/编写第一个eletron程序.md/
+  - icon: project
+    name: leetcode
+    desc: leetcode刷题记录
+    link: /leetcode/目录/
 
 #
 #  - icon: link

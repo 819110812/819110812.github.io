@@ -26,7 +26,6 @@ export default sidebar([
         collapsable: true,
         children: "structure",
     },
-
     {
         text: "软件架构",
         icon: "",

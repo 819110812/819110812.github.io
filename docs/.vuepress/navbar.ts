@@ -3,7 +3,11 @@ import {navbar} from "vuepress-theme-hope";
 // 精选图标：https://vuepress-theme-hope.github.io/v2/zh/guide/interface/icon.html#iconfont-%E7%B2%BE%E9%80%89%E5%9B%BE%E6%A0%87
 export default navbar([
     {text: "首页", link: "/home", icon: "icon-shouye"},
-    {text: "计划", icon: "plan", link: "/plans/TodoList"},
+    {
+        text: "软件架构", icon: "", children: [
+            "/arch/目录.md",
+        ]
+    },
     // {
     //     text: "项目",
     //     icon: "project",
@@ -12,39 +16,37 @@ export default navbar([
     //     ]
     // },
     {
-      text: "k8s",
+        text: "k8s",
         icon: "k8s",
         children: [
-            "/k8s/k8s练习01.md",
-            "/k8s/k8s练习02.md",
+            "/k8s/目录.md",
         ]
     },
     {
         text: "acp",
         icon: "acp",
         children: [
-            "/acp/弹性伸缩.md"
+            "/acp/目录.md"
         ]
     },
     {
         text: "java",
         icon: "java",
         children: [
-            "/java/springboot笔记01.md",
-            ]
+            "/java/目录.md",
+        ]
     },
     {
         text: "go",
         icon: "go",
         children: [
-            "/go/如何理解和使用go context.md",
-            "/go/golang 并发编程sync包.md"
+            "/go/目录.md",
         ]
     }, {
         text: "eletron",
         icon: "eletron",
         children: [
-            "/eletron/编写第一个eletron程序.md",
+            "/eletron/目录.md",
         ]
     }
     // {text: "代码", icon: "blog", prefix: "/code/", link: "", collapsable: true, children: "structure"},

@@ -1,3 +1,10 @@
+---
+article: true
+title: 移除元素
+tag: leetcode
+category: BFS, DFS
+order: 19
+---
 # Leetcode27 -- 移除元素
 
 **题目：**   **难度：** 简单
@@ -141,3 +148,6 @@ func Test_Should_Get_Correct_Answer(t *testing.T) {
 **总结：**
 
 看到数组的题目，习惯性的思考我们是否可以用双指针的思想来做。题目要求返回的是一个长度，这种情况大概率是可以通过指针的标记位置来返回结果的。那么我们应该要解决的问题就是如何使用这个指针，解决这个问题，我们题目的解答自然而然就出来了。
+
+
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian扫码_搜索联合传播样式-标准色版.png)
