@@ -53,8 +53,7 @@ XA协议是一个两阶段提交的协议，它可以直接作用于很多数据
 
 > 第二阶段： 提交
 
-![](/Users/siqiuchen/Library/Application%20Support/marktext/images/2022-09-11-14-19-54-image.png)
-
+![](https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220911150456.png)
 
 
 ### XA协议的痛点

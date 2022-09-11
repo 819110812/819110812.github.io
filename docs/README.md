@@ -40,7 +40,7 @@ projects:
   - icon: project
     name: leetcode
     desc: leetcode刷题记录
-    link: /leetcode/目录/
+    link: /leetcode/目录.md/
 
 #
 #  - icon: link
