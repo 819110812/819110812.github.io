@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+'
+'Alice -> Bob: Authentication Request
+'Bob --> Alice: Authentication Response
+'
+'Alice -> Bob: Another authentication Request
+'Alice <-- Bob: another authentication Response
+'
+
+user -> account: 检查账户余额，锁定账户
+alt 余额充足
+    account -> user: 记录confirm信息
+else 余额不足
+    account -> user: 记录cancel信息
+end
+
+user -> inventory: 检查库存,锁定库存
+alt 库存充足
+    inventory -> user: 记录confirm信息
+else 库存不足
+    inventory -> user: 记录cancel信息
+end
+
+user -> order
+alt 订单创建成功
+    order -> user: 记录confirm信息
+else 订单创建失败
+    order -> user: 记录cancel信息
+end
+
+alt [任何服务返回cancel信息]
+loop [循环直到所有服务成功]
+    user -> account: 解锁账户
+    user -> inventory: 解锁库存
+    user -> order: 解锁订单
+end
+'else [所有服务返回confirm信息]
+'    user -> account: 扣减账户余额
+'    user -> inventory: 减少库存
+'    user -> order: 创建订单
+end
+
+
+@enduml
