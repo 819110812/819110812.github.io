@@ -12,11 +12,12 @@ order: 2
 <div style="text-align: center;">golang锁模型</div>
 
 ## mutex 和 rwmutex
-
+### 是什么？
 `Mutex`: 和java里的一样，`Mutex`是一个互斥锁，也就是说，同一时刻只能有一个goroutine持有锁，其他的goroutine只能等待。
 `RWMutex`: 读写锁， `RWMutex`有两个锁，一个是读锁，一个是写锁。读锁是共享的，多个goroutine可以同时持有读锁，
 而写锁是独占的，只能有一个goroutine持有写锁。当一个goroutine持有写锁时，其他goroutine既不能持有读锁，也不能持有写锁。
 
+### 怎么用？
 一般的用法就是将`Mutex`或者`RWMutex`和需要保护的数据放在一起，这样就可以保证数据的安全性了。
 如：
 
@@ -40,6 +41,7 @@ func (c *Counter) Inc() {
 
 主要方法： RLock() RUnlock() Lock() Unlock()
 
+#### 怎么用？
 实战案例： `LoadOrStore`方法
 
 ```go
@@ -78,8 +80,30 @@ func (m *Map) LoadOrStore(key, newValue string) (value string, loaded bool) {
 
 
 ## once
+### 是什么？
+`Once`是一个只执行一次的结构体，可以用来保证某个函数只执行一次，比如初始化的时候，只需要初始化一次就可以了。
+例子：
+
+```go
+var instance *singleton
+var once sync.Once
+
+// GetInstance: 获取单例 无论调用多少次GetInstance，都只会执行一次
+func GetInstance() *singleton {
+    once.Do(func() {
+        instance = &singleton{}
+    })
+    return instance
+}
+```
+
 
 ## pool
+### 是什么？
+`Pool`是一个可以安全的在多个goroutine间共享且重用的对象的集合，可以用来减少内存分配的次数，提高性能。一般情况下，如果考虑缓存资源，
+如创建好的对象，可以放到pool里面。但是`sync.Pool`不适合用来管理所有的资源，因为它不会对资源的数量进行限制，如果资源数量过多，会导致内存溢出，
+并且GC的时候会释放资源。
+### 怎么用？
 
 ## waitgroup
 
