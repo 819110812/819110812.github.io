@@ -2,7 +2,6 @@
 article: true
 title: 移除元素
 tag: leetcode
-category: BFS, DFS
 order: 19
 ---
 # Leetcode27 -- 移除元素
