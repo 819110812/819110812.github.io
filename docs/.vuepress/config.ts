@@ -51,7 +51,7 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-CETLHC8SH3",
         }),
-        // // rss 订阅描述
+        // rss 订阅描述
         // feedPlugin({
         //   hostname: "https://newzone.top",
         //   rss: true,
