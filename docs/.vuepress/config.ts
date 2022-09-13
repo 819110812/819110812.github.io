@@ -49,7 +49,7 @@ export default defineUserConfig({
         }),
         //谷歌分析 ID
         googleAnalyticsPlugin({
-            id: "G-RWKZTY2P9R",
+            id: "G-CETLHC8SH3",
         }),
         // // rss 订阅描述
         // feedPlugin({
