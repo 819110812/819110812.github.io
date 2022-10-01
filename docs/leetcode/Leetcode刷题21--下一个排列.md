@@ -64,30 +64,21 @@ order: 21
 
 - 目前细化下来，我们要解决的主要问题就是，字典序排列的规则
 
-
-
 > ***字典序问题的规律 （可以选择死记硬背）***
 > 
 > 给定一个数列，要知道它的字典序，主要知道它变成1,2,3,4.....n需要移动的次数。
 > 
 > 移动原则是a[i] 从大到小移动，对于每一个数字a[i]，若i前面比a[i] 小的个数正好是a[i] - 1 个，则这个数不需要向后移动以达到目标序列，否则i 后面必然有a[i] - t - 1 (此处t 的值为a[i] 之前比a[i] 小的数字的个数)个比a[i] 小的数，只要把a[i] 移动到比自己小的数后面才能使得移动中的序列正向目标前进。
 > 
-> 
 > 因此只要求出每个数的移动次数，然后相加就是该序列的位置。即每个数到正确位置需要移动的次数为: (a[i] - t-1)*(a[i]-t-1)!
-
-
 
 | 字典序值 | 0   | 1   | 2   | 3   | 4   | 5   |
 | ---- | --- | --- | --- | --- | --- | --- |
 | 排列   | 123 | 132 | 213 | 231 | 312 | 321 |
 
-
-
 举个栗子：
 
 给定数列`[3,2,1]`，我们从最左边边的3开始看，3的前面应该有两个元素1，2是小于3的，那么他要变成`[1,2,3]`的正序的情况下，需要挪动`a[i]-0-1` = 2 位（这里是位数不是次数），同理，2需要挪动的次数 `a[i]-0-1`=1 位。那么数列`[3,2,1]`所在字典序的位置应该是 `2*2！+1*1！=5` （`[1,2,3]是0号位`）
-
-
 
 再来一个 `[3,1,2]`例子：
 
@@ -96,8 +87,6 @@ order: 21
 1是`a[i]-0-1`=0, 2是`2-1-1`=0
 
 所以位置是`2*2!`=4
-
-
 
 > 下一位排列
 
@@ -116,8 +105,6 @@ order: 21
 从1开始：1左侧没有比他小的，
 
 到3，3的左侧有2比他小，3，2互换，变成`[4,3,2,1]`，把`3,2`排序还是`[4,3,2,1]`
-
-
 
 变成代码逻辑：
 
@@ -205,111 +192,101 @@ public class NextPermutationTest {
 }
 ```
 
-
-
 golang版本：
 
 ```go
 func nextPermutation(nums []int) {
-	right := len(nums) - 2
-	for i := right; i >= 0; i-- {
-		if i >= 0 && nums[i+1] <= nums[i] {
-			right--
-		}
-	}
+    right := len(nums) - 2
+    for i := right; i >= 0; i-- {
+        if i >= 0 && nums[i+1] <= nums[i] {
+            right--
+        }
+    }
 
-	if right >= 0 {
-		j := len(nums) - 1
-		for j >= 0 && nums[j] <= nums[right] {
-			j--
-		}
-		swap(right, j, &nums)
-	}
-	reverse(&nums, right+1, len(nums)-1)
+    if right >= 0 {
+        j := len(nums) - 1
+        for j >= 0 && nums[j] <= nums[right] {
+            j--
+        }
+        swap(right, j, &nums)
+    }
+    reverse(&nums, right+1, len(nums)-1)
 
 }
 
 func swap(i int, j int, nums *[]int) {
-	(*nums)[i], (*nums)[j] = (*nums)[j], (*nums)[i]
+    (*nums)[i], (*nums)[j] = (*nums)[j], (*nums)[i]
 }
 
 func reverse(nums *[]int, start int, end int) {
-	for start < end {
-		swap(start, end, nums)
-		start++
-		end--
-	}
+    for start < end {
+        swap(start, end, nums)
+        start++
+        end--
+    }
 }
 
 func Test_nextPermutation(t *testing.T) {
-	type args struct {
-		nums     []int
-		expected []int
-	}
-	tests := []struct {
-		name string
-		args args
-	}{
-		// TODO: Add test cases.
-		{
-			name: "case1",
-			args: args{
-				nums:     []int{1, 2, 3},
-				expected: []int{1, 3, 2},
-			},
-		},
-		{
-			name: "case2",
-			args: args{
-				nums:     []int{3, 2, 1},
-				expected: []int{1, 2, 3},
-			},
-		},
-		{
-			name: "case3",
-			args: args{
-				nums:     []int{1, 1, 5},
-				expected: []int{1, 5, 1},
-			},
-		},
-		{
-			name: "case4",
-			args: args{
-				nums:     []int{1},
-				expected: []int{1},
-			},
-		},
-		{
-			name: "case5",
-			args: args{
-				nums:     []int{1, 3, 2},
-				expected: []int{2, 1, 3},
-			},
-		},
-		{
-			name: "case6",
-			args: args{
-				nums:     []int{5, 4, 7, 5, 3, 2},
-				expected: []int{5, 5, 2, 3, 4, 7},
-			},
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			nextPermutation(tt.args.nums)
-		})
-	}
+    type args struct {
+        nums     []int
+        expected []int
+    }
+    tests := []struct {
+        name string
+        args args
+    }{
+        // TODO: Add test cases.
+        {
+            name: "case1",
+            args: args{
+                nums:     []int{1, 2, 3},
+                expected: []int{1, 3, 2},
+            },
+        },
+        {
+            name: "case2",
+            args: args{
+                nums:     []int{3, 2, 1},
+                expected: []int{1, 2, 3},
+            },
+        },
+        {
+            name: "case3",
+            args: args{
+                nums:     []int{1, 1, 5},
+                expected: []int{1, 5, 1},
+            },
+        },
+        {
+            name: "case4",
+            args: args{
+                nums:     []int{1},
+                expected: []int{1},
+            },
+        },
+        {
+            name: "case5",
+            args: args{
+                nums:     []int{1, 3, 2},
+                expected: []int{2, 1, 3},
+            },
+        },
+        {
+            name: "case6",
+            args: args{
+                nums:     []int{5, 4, 7, 5, 3, 2},
+                expected: []int{5, 5, 2, 3, 4, 7},
+            },
+        },
+    }
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            nextPermutation(tt.args.nums)
+        })
+    }
 }
 ```
-
-
-
-
 
 ## 总结
 
 这是一道关于字典序排列的经典题目，在题目分析的时候抓住重点，我们需要解决的问题是字典序的问题，其次是下一个排列。所以这个题目着手点就是字典序的规律，至于这个规律如果之前不知道的话，只能全靠自己去归纳总结了。
-
-
-
-
