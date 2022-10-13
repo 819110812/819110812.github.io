@@ -3,8 +3,8 @@ article: true
 title: 如何Golang快速构建一个CLI小工具
 star: true
 tag:
-- go
-  order: 4
+   - go
+order: 4
 ---
 
 # 如何Golang快速构建一个CLI小工具
