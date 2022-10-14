@@ -1,5 +1,5 @@
 ---
-article: true
+article: false 
 title: springboot笔记01 - SpringFactoriesLoader
 tag:
 - springboot
