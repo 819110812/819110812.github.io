@@ -1,10 +1,10 @@
 ---
 article: true
-title: 如何Golang快速构建一个CLI小工具
+title: 如何Golang快速构建一个CLI小工具02-解析文件
 star: true
 tag:
    - go
-order: 4
+order: 5
 ---
 
 # 如何用golang快速构建一个CLI小工具02 - 解析文件
