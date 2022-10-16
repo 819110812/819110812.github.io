@@ -8,6 +8,13 @@ import {path} from "@vuepress/utils";
 import theme from "./theme";
 import photoSwipePlugin from "vuepress-plugin-photo-swipe";
 
+const autometa_options = {
+    site: {
+        name   : '菜鸡阿秋',
+    },
+    canonical_base: 'https://doraemonabcd.xyz/',
+}
+
 export default defineUserConfig({
     //网站语言，默认为中文
     lang: "zh-CN",
@@ -31,6 +38,8 @@ export default defineUserConfig({
 
 
     plugins: [
+        //自动推送百度
+
         // copyCodePlugin({
         //     // 插件选项
         //     selector: ".theme-default-content div[class*=\"language-\"] pre",
@@ -51,6 +60,17 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-CETLHC8SH3",
         }),
+        // autometa
+        ['autometa', autometa_options],
+
+        // sitemap
+        ['sitemap', {
+            hostname: 'https://doraemonabcd.xyz',
+            exclude: ['/404.html'],
+        }],
+
+
+
         // rss 订阅描述
         // feedPlugin({
         //   hostname: "https://newzone.top",
@@ -59,3 +79,10 @@ export default defineUserConfig({
         // }),
     ],
 });
+
+
+module.exports = {
+    plugins: [
+        'vuepress-plugin-baidu-autopush'
+    ]
+};
