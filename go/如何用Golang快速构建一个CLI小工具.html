@@ -1,54 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
-    <meta name="keywords" content="自我提升,效率提升,开源工具,学习笔记" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
     <style>
       :root {
-        --bg-color: #fff;
+        --c-bg: #fff;
       }
-
-      html[data-theme="dark"] {
-        --bg-color: #1d2025;
+      html.dark {
+        --c-bg: #22272e;
       }
-
-      html,
-      body {
-        background-color: var(--bg-color);
+      html, body {
+        background-color: var(--c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
-      const systemDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
-        document.querySelector("html").setAttribute("data-theme", "dark");
-      }
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
     </script>
-    <link rel="stylesheet" href="/assets/style.5d008c4b.css">
-    <link rel="modulepreload" href="/assets/app.6df1d003.js"><link rel="modulepreload" href="/assets/如何用Golang快速构建一个CLI小工具.html.7bfd6416.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/assets/如何用Golang快速构建一个CLI小工具.html.652a22e8.js">
-    <!-- Matomo 此区块为统计代码，请删除-->
-    <script>
-      var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://piwik.seoipo.com/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '7']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <!-- End Matomo Code 此区块为统计代码，请删除-->
+    
+    <link rel="modulepreload" href="/assets/app.975fecf7.js"><link rel="modulepreload" href="/assets/如何用Golang快速构建一个CLI小工具.html.876495b9.js"><link rel="modulepreload" href="/assets/如何用Golang快速构建一个CLI小工具.html.e3a468df.js"><link rel="prefetch" href="/assets/index.html.c994a596.js"><link rel="prefetch" href="/assets/Read.html.20c08c63.js"><link rel="prefetch" href="/assets/blog.html.833189ef.js"><link rel="prefetch" href="/assets/home.html.92f9847e.js"><link rel="prefetch" href="/assets/intro.html.e9c24b1c.js"><link rel="prefetch" href="/assets/ECS.html.b0255821.js"><link rel="prefetch" href="/assets/弹性伸缩.html.ebcee1a4.js"><link rel="prefetch" href="/assets/目录.html.157805ae.js"><link rel="prefetch" href="/assets/负载均衡SLB.html.7e18a956.js"><link rel="prefetch" href="/assets/AppNotes.html.f575f7e2.js"><link rel="prefetch" href="/assets/Applist.html.dda9df51.js"><link rel="prefetch" href="/assets/Chrome.html.008f7e05.js"><link rel="prefetch" href="/assets/Record.html.1d1aeee4.js"><link rel="prefetch" href="/assets/目录.html.67e94c24.js"><link rel="prefetch" href="/assets/聊一聊分布式系统中的TCC.html.2c0ca390.js"><link rel="prefetch" href="/assets/Regex.html.6f37f016.js"><link rel="prefetch" href="/assets/github ssh配置.html.42093e65.js"><link rel="prefetch" href="/assets/github_宝塔自动部署.html.3dee5af9.js"><link rel="prefetch" href="/assets/waline评论服务docker自部署.html.a5792725.js"><link rel="prefetch" href="/assets/目录.html.10b5646b.js"><link rel="prefetch" href="/assets/目录.html.c240dc0e.js"><link rel="prefetch" href="/assets/编写第一个eletron程序.html.a81e5d7f.js"><link rel="prefetch" href="/assets/Goalng 常见数据结构实现原理.html.0af89c6b.js"><link rel="prefetch" href="/assets/golang 并发编程sync包.html.5ce77150.js"><link rel="prefetch" href="/assets/如何理解和使用go context.html.602b55a0.js"><link rel="prefetch" href="/assets/如何用golang快速构建一个CLI小工具02-解析文件.html.69b99785.js"><link rel="prefetch" href="/assets/目录.html.92c17c60.js"><link rel="prefetch" href="/assets/spring cloud 集成k8s服务发现.html.9e6c4cba.js"><link rel="prefetch" href="/assets/springboot笔记01.html.b104e58d.js"><link rel="prefetch" href="/assets/目录.html.e6d15944.js"><link rel="prefetch" href="/assets/k8s练习01.html.dc9c2ad4.js"><link rel="prefetch" href="/assets/k8s练习02.html.7bddbf20.js"><link rel="prefetch" href="/assets/目录.html.9614de7d.js"><link rel="prefetch" href="/assets/Leetcode刷题01-二叉树的深度.html.9b93248f.js"><link rel="prefetch" href="/assets/Leetcode刷题02- 平衡二叉树.html.9dd7e986.js"><link rel="prefetch" href="/assets/Leetcode刷题03-对称二叉树.html.0de0db31.js"><link rel="prefetch" href="/assets/Leetcode刷题04-股票的最大利润.html.76f84e34.js"><link rel="prefetch" href="/assets/Leetcode刷题05---礼物的最大价值.html.b238aa8f.js"><link rel="prefetch" href="/assets/Leetcode刷题06--二分查找.html.de68f25e.js"><link rel="prefetch" href="/assets/Leetcode刷题07 - 二叉树的层序遍历.html.9fc5e5d5.js"><link rel="prefetch" href="/assets/Leetcode刷题08 -- 有效的完全平方数.html.6e30914c.js"><link rel="prefetch" href="/assets/Leetcode刷题09--二维数组中的查找.html.b3b544fe.js"><link rel="prefetch" href="/assets/Leetcode刷题10 -- 从尾到头打印链表.html.8221822c.js"><link rel="prefetch" href="/assets/Leetcode刷题11：寻找数组的中心索引.html.6ffb68cc.js"><link rel="prefetch" href="/assets/Leetcode刷题12：回文数.html.caba40ab.js"><link rel="prefetch" href="/assets/Leetcode刷题13 --二叉树的中序遍历.html.2cc33c2b.js"><link rel="prefetch" href="/assets/Leetcode刷题14 --- 判断能否形成等差数列.html.630ef1bb.js"><link rel="prefetch" href="/assets/Leetcode刷题15 -- 环形链表.html.358670ff.js"><link rel="prefetch" href="/assets/Leetcode刷题16 -- 环形链表II.html.adae03ab.js"><link rel="prefetch" href="/assets/Leetcode刷题17--二叉树的镜像.html.3b96d2d1.js"><link rel="prefetch" href="/assets/Leetcode刷题18-- 和为s的两个数.html.0ab710fa.js"><link rel="prefetch" href="/assets/Leetcode刷题19--地图分析.html.f7e6cda7.js"><link rel="prefetch" href="/assets/Leetcode刷题20--移除元素.html.8e1b2369.js"><link rel="prefetch" href="/assets/Leetcode刷题21--下一个排列.html.3def1d31.js"><link rel="prefetch" href="/assets/Leetcode刷题22--寻找旋转排序数组.html.f9f4b6b9.js"><link rel="prefetch" href="/assets/目录.html.f9ef5864.js"><link rel="prefetch" href="/assets/TodoList.html.386dcc8d.js"><link rel="prefetch" href="/assets/1.html.91e075e9.js"><link rel="prefetch" href="/assets/目录.html.48eb0067.js"><link rel="prefetch" href="/assets/404.html.7d858b3d.js"><link rel="prefetch" href="/assets/index.html.a2e1810c.js"><link rel="prefetch" href="/assets/Read.html.ae410cd2.js"><link rel="prefetch" href="/assets/blog.html.08d2cf6d.js"><link rel="prefetch" href="/assets/home.html.e2b1fe4f.js"><link rel="prefetch" href="/assets/intro.html.381a505d.js"><link rel="prefetch" href="/assets/ECS.html.d680e324.js"><link rel="prefetch" href="/assets/弹性伸缩.html.bf311d80.js"><link rel="prefetch" href="/assets/目录.html.d20b8852.js"><link rel="prefetch" href="/assets/负载均衡SLB.html.042333bc.js"><link rel="prefetch" href="/assets/AppNotes.html.8b245fb3.js"><link rel="prefetch" href="/assets/Applist.html.e0814683.js"><link rel="prefetch" href="/assets/Chrome.html.a25ea73c.js"><link rel="prefetch" href="/assets/Record.html.e40d36ac.js"><link rel="prefetch" href="/assets/目录.html.238c9bd6.js"><link rel="prefetch" href="/assets/聊一聊分布式系统中的TCC.html.b9b4d4b1.js"><link rel="prefetch" href="/assets/Regex.html.e659805a.js"><link rel="prefetch" href="/assets/github ssh配置.html.8f5963f0.js"><link rel="prefetch" href="/assets/github_宝塔自动部署.html.5e8e6612.js"><link rel="prefetch" href="/assets/waline评论服务docker自部署.html.9f82ec76.js"><link rel="prefetch" href="/assets/目录.html.9082a855.js"><link rel="prefetch" href="/assets/目录.html.2d2283fc.js"><link rel="prefetch" href="/assets/编写第一个eletron程序.html.13248940.js"><link rel="prefetch" href="/assets/Goalng 常见数据结构实现原理.html.95f2c536.js"><link rel="prefetch" href="/assets/golang 并发编程sync包.html.3c4364ef.js"><link rel="prefetch" href="/assets/如何理解和使用go context.html.487b48b2.js"><link rel="prefetch" href="/assets/如何用golang快速构建一个CLI小工具02-解析文件.html.66b03061.js"><link rel="prefetch" href="/assets/目录.html.2a267182.js"><link rel="prefetch" href="/assets/spring cloud 集成k8s服务发现.html.8166621c.js"><link rel="prefetch" href="/assets/springboot笔记01.html.1c7aaac7.js"><link rel="prefetch" href="/assets/目录.html.3dd8ac4f.js"><link rel="prefetch" href="/assets/k8s练习01.html.bdd21aef.js"><link rel="prefetch" href="/assets/k8s练习02.html.0561d5f2.js"><link rel="prefetch" href="/assets/目录.html.b8398b92.js"><link rel="prefetch" href="/assets/Leetcode刷题01-二叉树的深度.html.030d6eb4.js"><link rel="prefetch" href="/assets/Leetcode刷题02- 平衡二叉树.html.cb83449b.js"><link rel="prefetch" href="/assets/Leetcode刷题03-对称二叉树.html.ab4b6f0d.js"><link rel="prefetch" href="/assets/Leetcode刷题04-股票的最大利润.html.56f238a6.js"><link rel="prefetch" href="/assets/Leetcode刷题05---礼物的最大价值.html.b2f1bb4b.js"><link rel="prefetch" href="/assets/Leetcode刷题06--二分查找.html.e473698e.js"><link rel="prefetch" href="/assets/Leetcode刷题07 - 二叉树的层序遍历.html.2b09a352.js"><link rel="prefetch" href="/assets/Leetcode刷题08 -- 有效的完全平方数.html.96c937c1.js"><link rel="prefetch" href="/assets/Leetcode刷题09--二维数组中的查找.html.9b026cf4.js"><link rel="prefetch" href="/assets/Leetcode刷题10 -- 从尾到头打印链表.html.cc082b21.js"><link rel="prefetch" href="/assets/Leetcode刷题11：寻找数组的中心索引.html.bf1a80a2.js"><link rel="prefetch" href="/assets/Leetcode刷题12：回文数.html.abee7fc6.js"><link rel="prefetch" href="/assets/Leetcode刷题13 --二叉树的中序遍历.html.52d06985.js"><link rel="prefetch" href="/assets/Leetcode刷题14 --- 判断能否形成等差数列.html.310f5d2f.js"><link rel="prefetch" href="/assets/Leetcode刷题15 -- 环形链表.html.d8b750f8.js"><link rel="prefetch" href="/assets/Leetcode刷题16 -- 环形链表II.html.11a8549c.js"><link rel="prefetch" href="/assets/Leetcode刷题17--二叉树的镜像.html.598833d7.js"><link rel="prefetch" href="/assets/Leetcode刷题18-- 和为s的两个数.html.a1b20c31.js"><link rel="prefetch" href="/assets/Leetcode刷题19--地图分析.html.5b2ae6f5.js"><link rel="prefetch" href="/assets/Leetcode刷题20--移除元素.html.13638fc1.js"><link rel="prefetch" href="/assets/Leetcode刷题21--下一个排列.html.6f1c1a7f.js"><link rel="prefetch" href="/assets/Leetcode刷题22--寻找旋转排序数组.html.139faf21.js"><link rel="prefetch" href="/assets/目录.html.80be7c86.js"><link rel="prefetch" href="/assets/TodoList.html.96deac60.js"><link rel="prefetch" href="/assets/1.html.08a7ad19.js"><link rel="prefetch" href="/assets/目录.html.fdc92069.js"><link rel="prefetch" href="/assets/404.html.7c370767.js"><link rel="prefetch" href="/assets/404.38126b4e.js"><link rel="prefetch" href="/assets/Layout.588caa35.js">
+    <link rel="stylesheet" href="/assets/style.f4d22aab.css">
   </head>
   <body>
     <div id="app"><!----></div>
-    <script type="module" src="/assets/app.6df1d003.js" defer></script>
+    <script type="module" src="/assets/app.975fecf7.js" defer></script>
   </body>
 </html>

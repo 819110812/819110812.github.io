@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2382045e","path":"/acp/ECS.html","title":"ECS","lang":"en-US","frontmatter":{"article":true,"title":"ECS","tag":"acp","order":1},"excerpt":"","headers":[],"git":{"updatedTime":1662601051000,"contributors":[{"name":"siqiuchen","email":"Siqiu.Chen@dentsplysirona.com","commits":2}]},"filePathRelative":"acp/ECS.md"}');export{e as data};
