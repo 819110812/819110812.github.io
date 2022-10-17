@@ -69,10 +69,10 @@ export default defineUserConfig({
             exclude: ['/404.html'],
         }],
 
-        "vuepress-plugin-google-adsense",
+       [ "vuepress-plugin-google-adsense",
         {
             adClient: "ca-pub-7103594650498826", // replace it with your adClient
-        },
+        },]
 
 
 
