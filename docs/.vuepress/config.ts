@@ -29,7 +29,16 @@ export default defineUserConfig({
     //侧边栏配置
     sidebar: "heading",
 
-
+    head: [
+        [
+            "script",
+            {
+                "data-ad-client": "ca-pub-7103594650498826",
+                async: true,
+                src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            }
+        ],
+    ],
     plugins: [
         // copyCodePlugin({
         //     // 插件选项

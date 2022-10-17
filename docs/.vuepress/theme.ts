@@ -3,124 +3,125 @@ import navbar from "./navbar";
 import sidebar from "./sidebar";
 
 export default hopeTheme({
-  //主题选项
-  //https://vuepress-theme-hope.github.io/v2/zh/config/theme/layout.html
-  hostname: "https://doraemonabcd.xyz",
+    //主题选项
+    //https://vuepress-theme-hope.github.io/v2/zh/config/theme/layout.html
+    hostname: "https://doraemonabcd.xyz",
 
-  // author: {
-  //   name: "清顺",
-  //   url: "https://newzone.top",
-  // },
+    // author: {
+    //   name: "清顺",
+    //   url: "https://newzone.top",
+    // },
 
-  iconAssets: "at.alicdn.com/t/c/font_3614191_jdeqy11h8mn.css",
-  logo: "/icon.svg",
-  // logo: "/logo.svg",
-  pure: true,
+    iconAssets: "at.alicdn.com/t/c/font_3614191_jdeqy11h8mn.css",
+    logo: "/icon.svg",
+    // logo: "/logo.svg",
+    pure: true,
 
-  //是否全局启用路径导航
-  breadcrumb: true,
+    //是否全局启用路径导航
+    breadcrumb: true,
 
-  //页面元数据：贡献者，最后修改时间，编辑链接
-  contributors: false,
-  lastUpdated: true,
-  editLink: true,
+    //页面元数据：贡献者，最后修改时间，编辑链接
+    contributors: false,
+    lastUpdated: true,
+    editLink: true,
 
-  //深色模式配置
-  //darkmode: "disable",
-  themeColor: {
-    blue: "#2196f3",
-    red: "#f26d6d",
-    green: "#3eaf7c",
-    orange: "#fb9b5f",
-  },
-  fullscreen: true,
-
-  // 默认为 GitHub. 同时也可以是一个完整的 URL
-  repo: "https://github.com/819110812",
-  // 自定义仓库链接文字。默认从 `repo` 中自动推断为 "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
-  repoLabel: "GitHub",
-  // 是否在导航栏内显示仓库链接，默认为 `true`
-  repoDisplay: true,
-
-  // docsDir: "demo/src",
-
-  // navbar
-  navbar: navbar,
-  //导航栏布局
-  navbarLayout: {
-	left: ["Brand"],
-	center: ["Links"],
-	right: ["Repo", "Outlook", "Search"],
-  },
-  //是否在向下滚动时自动隐藏导航栏
-  //navbarAutoHide: "always",
-
-
-  //侧边栏排序规则
-  //sidebarSorter: ['readme', 'order', 'title'],
-  // sidebar
-  sidebar: sidebar,
-
-  footer: "",
-
-  displayFooter: true,
-  pageInfo: ["Category", "Tag", "Word", "ReadingTime", "PageView"],
-  //https://vuepress-theme-hope.github.io/v2/zh/config/frontmatter/layout.html#pageinfo
-  // pageInfo: ["Author", "Original", "Date", "Category", "Tag", "Word", "ReadingTime"],
-
-  //https://vuepress-theme-hope.github.io/v2/zh/config/theme/feature.html
-  blog: {
-    name: "菜鸡阿秋",
-    articleInfo: ["Date", "Category", "Tag", "ReadingTime", "PageView"],
-    // name: "清顺",
-    // avatar: "/avatar_self.webp",
-    // description: "迷信新工具，热衷于研究开源软件、心理学理论，定期分享探索成果",
-    intro: "/intro.html",
-    roundAvatar: true,
-    medias: {
-      // GitHub: "https://github.com/rockbenben",
-      // Zhihu: "https://www.zhihu.com/people/qingwhat",
-      // Weibo: "https://weibo.com/u/1992817087",
-      // Wechat: "http://tc.seoipo.com/wechat.svg",
-      // 少数派: [
-      //   "https://sspai.com/u/zqj05i4v/posts",
-      //   path.resolve(__dirname, "icons/sspai.svg"),
-      // ],
-      // RSS: "https://newzone.top/rss.xml",
+    //深色模式配置
+    //darkmode: "disable",
+    themeColor: {
+        blue: "#2196f3",
+        red: "#f26d6d",
+        green: "#3eaf7c",
+        orange: "#fb9b5f",
     },
-  },
+    fullscreen: true,
 
-  plugins: {
+    // 默认为 GitHub. 同时也可以是一个完整的 URL
+    repo: "https://github.com/819110812",
+    // 自定义仓库链接文字。默认从 `repo` 中自动推断为 "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
+    repoLabel: "GitHub",
+    // 是否在导航栏内显示仓库链接，默认为 `true`
+    repoDisplay: true,
 
+    // docsDir: "demo/src",
+
+    // navbar
+    navbar: navbar,
+    //导航栏布局
+    navbarLayout: {
+        left: ["Brand"],
+        center: ["Links"],
+        right: ["Repo", "Outlook", "Search"],
+    },
+    //是否在向下滚动时自动隐藏导航栏
+    //navbarAutoHide: "always",
+
+
+    //侧边栏排序规则
+    //sidebarSorter: ['readme', 'order', 'title'],
+    // sidebar
+    sidebar: sidebar,
+
+    footer: "",
+
+    displayFooter: true,
+    pageInfo: ["Category", "Tag", "Word", "ReadingTime", "PageView"],
+    //https://vuepress-theme-hope.github.io/v2/zh/config/frontmatter/layout.html#pageinfo
+    // pageInfo: ["Author", "Original", "Date", "Category", "Tag", "Word", "ReadingTime"],
+
+    //https://vuepress-theme-hope.github.io/v2/zh/config/theme/feature.html
     blog: {
-      // 自动摘要
-      autoExcerpt: true,
+        name: "菜鸡阿秋",
+        articleInfo: ["Date", "Category", "Tag", "ReadingTime", "PageView"],
+        // name: "清顺",
+        // avatar: "/avatar_self.webp",
+        // description: "迷信新工具，热衷于研究开源软件、心理学理论，定期分享探索成果",
+        intro: "/intro.html",
+        roundAvatar: true,
+        medias: {
+            // GitHub: "https://github.com/rockbenben",
+            // Zhihu: "https://www.zhihu.com/people/qingwhat",
+            // Weibo: "https://weibo.com/u/1992817087",
+            // Wechat: "http://tc.seoipo.com/wechat.svg",
+            // 少数派: [
+            //   "https://sspai.com/u/zqj05i4v/posts",
+            //   path.resolve(__dirname, "icons/sspai.svg"),
+            // ],
+            // RSS: "https://newzone.top/rss.xml",
+        },
     },
 
-    //评论配置
-    comment: {
-      //部署 Waline：https://waline.js.org/guide/get-started.html
-      provider: "Waline",
-      // serverURL: "waline-1uugbly43-819110812.vercel.app",
-      // serverURL: "doraemonaqiu.win",
-      // serverURL: "http://waline.waline.1385754288670612.cn-shanghai.fc.devsapp.net/",
-      serverURL: "http://150.158.52.112:8360/",
-      pageview: true,
-      // Giscus 备用配置
-      // provider: "Giscus",
-      // repo: "rockbenben/LearnData",
-      // repoId: "R_kgDOHdfk6Q",
-      // category: "Comments",
-      // categoryId: "DIC_kwDOHdfk6c4CQYNn",
-    },
+    plugins: {
 
-    mdEnhance: {
-      enableAll: false,
-      footnote: true,
-      tasklist: true,
-      mark: true,
-      container: true,
-      lazyLoad: true,
+        blog: {
+            // 自动摘要
+            autoExcerpt: true,
+        },
+
+        //评论配置
+        comment: {
+            //部署 Waline：https://waline.js.org/guide/get-started.html
+            provider: "Waline",
+            // serverURL: "waline-1uugbly43-819110812.vercel.app",
+            // serverURL: "doraemonaqiu.win",
+            // serverURL: "http://waline.waline.1385754288670612.cn-shanghai.fc.devsapp.net/",
+            serverURL: "http://150.158.52.112:8360/",
+            pageview: true,
+            // Giscus 备用配置
+            // provider: "Giscus",
+            // repo: "rockbenben/LearnData",
+            // repoId: "R_kgDOHdfk6Q",
+            // category: "Comments",
+            // categoryId: "DIC_kwDOHdfk6c4CQYNn",
+        },
+
+        mdEnhance: {
+            enableAll: false,
+            footnote: true,
+            tasklist: true,
+            mark: true,
+            container: true,
+            lazyLoad: true,
+        },
+
     },
-  },
 });

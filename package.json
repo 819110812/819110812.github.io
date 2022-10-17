@@ -18,6 +18,7 @@
     "vuepress-theme-hope": "2.0.0-beta.91"
   },
   "devDependencies": {
+    "vuepress-plugin-google-adsense": "^0.2.1",
     "vuepress-plugin-photo-swipe": "2.0.0-beta.97",
     "vuepress-theme-vdoing": "^1.12.8"
   }
