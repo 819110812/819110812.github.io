@@ -5,7 +5,7 @@ article: false
 layout: Blog
 icon: home
 bgImage: http://tc.seoipo.com/home-bg-1.jpg
-title: 菜鸡阿秋 
+title: 菜鸡阿秋
 
 [//]: # (heroImage: ![]&#40;https://golearning.oss-cn-shanghai.aliyuncs.com/obsidian20220828195501.png&#41;)
 heroText: 菜鸡阿秋
