@@ -3,8 +3,10 @@ import {defineUserConfig} from "vuepress";
 //import { defineUserConfig } from "@vuepress/cli";
 import {searchPlugin} from "@vuepress/plugin-search";
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
+import {feedPlugin} from "vuepress-plugin-feed2";
 import {path} from "@vuepress/utils";
 import theme from "./theme";
+import photoSwipePlugin from "vuepress-plugin-photo-swipe";
 
 export default defineUserConfig({
     //网站语言，默认为中文
@@ -29,8 +31,6 @@ export default defineUserConfig({
 
 
     plugins: [
-        //自动推送百度
-
         // copyCodePlugin({
         //     // 插件选项
         //     selector: ".theme-default-content div[class*=\"language-\"] pre",
@@ -51,7 +51,6 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-CETLHC8SH3",
         }),
-
         // rss 订阅描述
         // feedPlugin({
         //   hostname: "https://newzone.top",
