@@ -3,17 +3,8 @@ import {defineUserConfig} from "vuepress";
 //import { defineUserConfig } from "@vuepress/cli";
 import {searchPlugin} from "@vuepress/plugin-search";
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
-import {feedPlugin} from "vuepress-plugin-feed2";
 import {path} from "@vuepress/utils";
 import theme from "./theme";
-import photoSwipePlugin from "vuepress-plugin-photo-swipe";
-
-const autometa_options = {
-    site: {
-        name   : '菜鸡阿秋',
-    },
-    canonical_base: 'https://doraemonabcd.xyz/',
-}
 
 export default defineUserConfig({
     //网站语言，默认为中文
@@ -60,21 +51,6 @@ export default defineUserConfig({
         googleAnalyticsPlugin({
             id: "G-CETLHC8SH3",
         }),
-        // autometa
-        ['autometa', autometa_options],
-
-        // sitemap
-        ['sitemap', {
-            hostname: 'https://doraemonabcd.xyz',
-            exclude: ['/404.html'],
-        }],
-
-       [ "vuepress-plugin-google-adsense",
-        {
-            adClient: "ca-pub-7103594650498826", // replace it with your adClient
-        },]
-
-
 
         // rss 订阅描述
         // feedPlugin({
@@ -84,10 +60,3 @@ export default defineUserConfig({
         // }),
     ],
 });
-
-
-module.exports = {
-    plugins: [
-        'vuepress-plugin-baidu-autopush'
-    ]
-};

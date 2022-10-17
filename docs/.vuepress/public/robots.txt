@@ -1,3 +1,0 @@
-Sitemap: https://doraemonabcd.xyz/sitemap.xml
-
-User-agent: *

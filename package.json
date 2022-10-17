@@ -15,13 +15,9 @@
     "vue": "^3.2.37",
     "vuepress": "2.0.0-beta.49",
     "vuepress-plugin-copy-code2": "2.0.0-beta.97",
-    "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-theme-hope": "2.0.0-beta.91"
   },
   "devDependencies": {
-    "vuepress-plugin-autometa": "^0.1.13",
-    "vuepress-plugin-baidu-autopush": "^1.0.1",
-    "vuepress-plugin-google-adsense": "^0.2.1",
     "vuepress-plugin-photo-swipe": "2.0.0-beta.97",
     "vuepress-theme-vdoing": "^1.12.8"
   }
